@@ -10,6 +10,21 @@ body {
     color: #FFF;
 }
 
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+}
+.intro h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.intro p {
+    font-size: 1rem;
+    color: #3f3333;
+}
+
 /* Info Section */
 .info {
     display: flex;
@@ -24,13 +39,6 @@ body {
 .info-left {
     display: flex;
     gap: 20px;
-}
-
-.info-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
 }
 
 .gallery-title {
@@ -102,7 +110,7 @@ header {
 .home-section {
     background-image: 
         linear-gradient(180deg, rgba(75, 71, 71, 0) 96%, rgb(0, 0, 0) 100%),
-        url(Images/bk.jpg);
+        url(Images/nbk.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -119,14 +127,9 @@ header {
     color: #FFF;
 }
 
-.home-links h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin: 0;
-}
-
 .home-links .explore-link {
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    background-color: #000000;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    background-color: #201111;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -141,10 +144,12 @@ header {
 
 /* Highlights Section */
 .highlights {
-    padding: 50px 20px;
+    padding: 0px 20px;
     background-color: #111;
     color: #FFF;
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: smaller;
 }
 
 .section-title {
@@ -155,13 +160,7 @@ header {
     letter-spacing: 1px;
 }
 
-.card-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
+/* Hover Enhancements */
 .card {
     position: relative;
     width: 280px;
@@ -170,8 +169,13 @@ header {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     background: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(73, 12, 204, 0.5);
 }
 
 .card img {
@@ -179,6 +183,16 @@ header {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    animation: zoomOut 3s infinite alternate ease-in-out;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
 }
 
 .card .layer {
@@ -191,19 +205,28 @@ header {
     transition: opacity 0.3s ease;
 }
 
+.card:hover .layer {
+    opacity: 1;
+}
 .card .info {
     position: absolute;
-    bottom: -50%;
+    bottom: -50%; /* Position it below the card initially */
     left: 0;
     right: 0;
     text-align: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #FFF;
-    opacity: 0;
+    opacity: 0; /* Make it completely invisible initially */
     border-radius: 16px;
-    transition: bottom 0.5s ease, opacity 0.5s ease;
+    transition: bottom 0.5s ease, opacity 0.5s ease; /* Smooth animation for visibility */
 }
+
+.card:hover .info {
+    bottom: 10%; /* Slide into view */
+    opacity: 1; /* Make it visible */
+}
+
 
 .card h1 {
     font-size: 1.5rem;
@@ -222,30 +245,29 @@ header {
     color: #FFF;
     font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .card button:hover {
     background: #3909A8;
-}
-
-/* Hover Effects */
-.card:hover img {
     transform: scale(1.1);
 }
 
-.card:hover .layer {
-    opacity: 1;
-}
-
-.card:hover .info {
-    bottom: 10%;
-    opacity: 1;
-}
-
+/* Card Group Blur Effect */
 .card-group:hover > .card:not(:hover) {
     filter: blur(5px);
-    transition: filter 0.3s ease;
+    transform: scale(0.95);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -280,3 +302,61 @@ header {
         font-size: 0.8rem;
     }
 }
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Show the modal when targeted */
+.modal:target {
+    display: flex;
+}
+
+/* Modal Content Styling */
+.modal-content {
+    background: #f8f5f5;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center the image in the modal */
+.modal img {
+    width: 100%;
+    max-width: 250px; /* Optional: adjust the max width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Close button for the modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
