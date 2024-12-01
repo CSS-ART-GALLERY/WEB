@@ -6,7 +6,7 @@ html {
 body {
     background: #000;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: #FFF;
 }
 
@@ -19,14 +19,17 @@ body {
 .intro h1 {
     font-size: 2rem;
     margin-bottom: 10px;
+     font-family: 'Georgia', serif; /* Classic serif font for historical feel */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Slight shadow to enhance readability */
 }
 .intro p {
     font-size: 1rem;
+    font-family: 'Georgia', serif; 
     color: #3f3333;
 }
 
 /* Info Section */
-.info {
+.infos {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +39,7 @@ body {
     position: relative;
 }
 
-.info-left {
+.infos-left {
     display: flex;
     gap: 20px;
 }
@@ -48,27 +51,27 @@ body {
     letter-spacing: 1.5px;
 }
 
-.info-right {
+.infos-right {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.info-right .social a,
-.info-right .info-link a {
+.infos-right .social a,
+.infos-right .infos-link a {
     color: #FFF;
     text-decoration: none;
     transition: color 0.4s ease-in-out;
 }
 
-.info-right .info-link a {
+.infos-right .infos-link a {
     background: #490CCC;
     border: 1px solid #490CCC;
     padding: 7px 12px;
     border-radius: 5px;
 }
 
-.info-right .info-link a:hover {
+.infos-right .infos-link a:hover {
     background: transparent;
     border-color: #FFF;
 }
@@ -142,6 +145,60 @@ header {
     color: #000000;
 }
 
+.intros-section {
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Gradient from top to bottom */
+        url(Images/8.webp); /* Replace with your image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between; /* Ensure text and image are spaced apart */
+    align-items: center; /* Align both text and image vertically in the center */
+    padding: 0; /* Ensure no additional padding */
+}
+
+.intros-content {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Vertically center the content */
+    width: 100%;
+}
+
+.text-container {
+    text-align: center; /* Center the text inside the container */
+    color: #FFF;
+    padding: 20px; /* Optional padding for spacing */
+    max-width: 50%; /* Limit text container width to half of the section */
+}
+.text-container h3 {
+    font-size: 1.5rem;
+    color: #ffffff; /* A more vintage color */
+    font-family: 'Georgia', serif; /* Classic serif font for historical feel */
+}
+
+
+.image-container {
+    color: #000000;
+    border: #f8f5f5;
+    flex: 1; /* The image section also takes up remaining space */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 500px; /* Control the size of the image */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners for the image */
+    object-fit: cover; /* Ensure the image covers the space without distortion */
+}
+
+
+
 /* Highlights Section */
 .highlights {
     padding: 0px 20px;
@@ -159,13 +216,12 @@ header {
     color: #FFF;
     letter-spacing: 1px;
 }
-
-/* Hover Enhancements */
+/* Hover Enhancements for Cards */
+/* Card Container */
 .card {
     position: relative;
     width: 280px;
     height: 400px;
-    border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -173,92 +229,105 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Card Hover */
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(73, 12, 204, 0.5);
+    transform: translateY(-10px); /* Lift the hovered card */
+    box-shadow: 0 10px 20px rgba(73, 12, 204, 0.5); /* Slight glow effect */
 }
 
+/* Image Holder: Add a frame and gradient overlay */
 .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-    animation: zoomOut 3s infinite alternate ease-in-out;
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+    border: 8px solid #fff; /* White border around the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow around the image */
 }
 
-@keyframes zoomOut {
+/* Apply animation only when hovered */
+.card:hover img {
+    animation: zoomInOut 3s infinite alternate ease-in-out; /* Continuous zoom effect */
+}
+
+/* Keyframes for Zoom In and Out */
+@keyframes zoomInOut {
     0% {
-        transform: scale(1);
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.1); /* Zoom in */
     }
     100% {
-        transform: scale(1.05);
+        transform: scale(1); /* Zoom out to original size */
     }
 }
 
-.card .layer {
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Info Section */
+
+/* Info Section */
+.info {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Stack the title and link vertically */
+    padding: 15px 50px;
+    background: #000;
+    border-bottom: 1px solid #333;
+    position: relative;
 }
 
-.card:hover .layer {
-    opacity: 1;
-}
+/* Info Section (Position it below the image) */
 .card .info {
     position: absolute;
-    bottom: -50%; /* Position it below the card initially */
+    bottom: 0; /* Position it at the bottom of the card */
     left: 0;
     right: 0;
     text-align: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #FFF;
-    opacity: 0; /* Make it completely invisible initially */
-    border-radius: 16px;
-    transition: bottom 0.5s ease, opacity 0.5s ease; /* Smooth animation for visibility */
+    transition: opacity 0.5s ease;
+    opacity: 0; /* Initially hide the info section */
 }
 
+/* Show the info section when hovered */
 .card:hover .info {
-    bottom: 10%; /* Slide into view */
-    opacity: 1; /* Make it visible */
+    opacity: 1; /* Make info visible */
 }
 
-
-.card h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.card button {
+/* Explore Button */
+.card .info a {
     padding: 10px 20px;
-    border: none;
     background: #490CCC;
     color: #FFF;
     font-weight: bold;
-    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.card button:hover {
-    background: #3909A8;
-    transform: scale(1.1);
+/* Button Hover Effect */
+.card .info a:hover {
+    background: linear-gradient(145deg, #3f51b5, #6b6f8d); /* Reverse gradient on hover */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-4px); /* Slightly lift the button on hover */
+    letter-spacing: 2px; /* Increase letter spacing */
+}
+
+/* Button Active Effect */
+.card .info a:active {
+    transform: translateY(2px); /* Slightly lower the button when clicked */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow on click */
 }
 
 /* Card Group Blur Effect */
 .card-group:hover > .card:not(:hover) {
-    filter: blur(5px);
-    transform: scale(0.95);
+    transform: translateY(0); /* Ensure no shift effect for non-hovered cards */
     transition: filter 0.3s ease, transform 0.3s ease;
 }
+
+
 
 
 /* Footer */
@@ -302,7 +371,6 @@ footer {
         font-size: 0.8rem;
     }
 }
-
 /* Modal Styling */
 .modal {
     display: none;
@@ -315,7 +383,7 @@ footer {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px;
 }
 
 /* Show the modal when targeted */
@@ -327,10 +395,12 @@ footer {
 .modal-content {
     background: #f8f5f5;
     color: #000000;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
+    width: 80%;
+    max-width: 700px;
+    height: 70%;
+    overflow-y: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -338,14 +408,38 @@ footer {
     align-items: center;
 }
 
-/* Center the image in the modal */
+/* Space before and after image inside modal content */
+.modal-content img {
+    margin-top: 20px;  /* Space above the image */
+    margin-bottom: 20px; /* Space below the image */
+    width: auto;
+    height: 350;
+    object-fit: cover;
+}
+
+/* Heading and Text Inside Modal */
+.modal-content h2 {
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    margin-top: 20px;  /* Space before the heading */
+}
+
+.modal-content p {
+    font-size: 1rem;
+    font-family: 'Times New Roman', serif;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Space after text */
+}
+
+/* Image directly inside .modal (optional, if used) */
 .modal img {
     width: 100%;
-    max-width: 250px; /* Optional: adjust the max width as needed */
-    height: auto; /* Maintain the aspect ratio */
+    max-width: 300px; /* Set the max width of the image */
+    height: auto;
     border-radius: 5px;
-    margin-bottom: 20px;
-    display: block;
+    margin-top: 20px;  /* Space before the image */
+    margin-bottom: 20px; /* Space after the image */
     object-fit: cover;
 }
 
@@ -359,4 +453,3 @@ footer {
     font-size: 2.5rem;
     font-weight: bold;
 }
-
