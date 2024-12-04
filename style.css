@@ -106,7 +106,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #490CCC;
+    color: #848386;
 }
 
 /* Home Section */
@@ -148,7 +148,7 @@ header {
 .intros-section {
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Gradient from top to bottom */
-        url(Images/8.webp); /* Replace with your image */
+        url(Images/plaza.jpg); /* Replace with your image */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -168,33 +168,33 @@ header {
 }
 
 .text-container {
-    text-align: center; /* Center the text inside the container */
+    text-align: left; /* Align text to the left for better readability */
     color: #FFF;
-    padding: 20px; /* Optional padding for spacing */
-    max-width: 50%; /* Limit text container width to half of the section */
+    padding: 20px;
+    max-width: 45%; /* Slightly reduce text width for better balance */
 }
 .text-container h3 {
     font-size: 1.5rem;
-    color: #ffffff; /* A more vintage color */
-    font-family: 'Georgia', serif; /* Classic serif font for historical feel */
+    color: #ffffff; 
+    font-family: 'Georgia', serif; 
+    line-height: 1.6; /* Improve readability */
 }
 
 
-.image-container {
-    color: #000000;
-    border: #f8f5f5;
-    flex: 1; /* The image section also takes up remaining space */
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+
+.applet-container {
+               
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(27, 27, 27);
+    padding: 10px;
+
 }
 
-.image-container img {
-    width: 100%;
-    max-width: 500px; /* Control the size of the image */
-    height: auto;
-    border-radius: 10px; /* Optional: rounded corners for the image */
-    object-fit: cover; /* Ensure the image covers the space without distortion */
+#map {
+    height: 60vh; /* Adjust this value based on your design */
+    width: 100vh; /* Full width for responsiveness */
+    border: 2px solid #000;
+    z-index: 1; /* Ensure it's behind the navbar */
 }
 
 
@@ -216,23 +216,30 @@ header {
     color: #FFF;
     letter-spacing: 1px;
 }
-/* Hover Enhancements for Cards */
+
 /* Card Container */
+.card-group{
+    gap: 1rem;
+    padding: 20px;
+
+}
 .card {
     position: relative;
     width: 280px;
-    height: 400px;
-    overflow: hidden;
+    height: 320px;
+    overflow: visible;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    background: #000;
+    background: #313030;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    
 }
 
 /* Card Hover */
 .card:hover {
     transform: translateY(-10px); /* Lift the hovered card */
-    box-shadow: 0 10px 20px rgba(73, 12, 204, 0.5); /* Slight glow effect */
+    box-shadow: 0 10px 20px rgba(243, 243, 245, 0.5); /* Slight glow effect */
 }
 
 /* Image Holder: Add a frame and gradient overlay */
@@ -241,6 +248,7 @@ header {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease; /* Smooth zoom transition */
+    border-radius: 40px;
     border: 8px solid #fff; /* White border around the image */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow around the image */
 }
@@ -262,8 +270,6 @@ header {
         transform: scale(1); /* Zoom out to original size */
     }
 }
-
-/* Info Section */
 
 /* Info Section */
 .info {
@@ -299,7 +305,7 @@ header {
 /* Explore Button */
 .card .info a {
     padding: 10px 20px;
-    background: #490CCC;
+    background: #4e4e4e;
     color: #FFF;
     font-weight: bold;
     text-decoration: none;
@@ -309,7 +315,8 @@ header {
 
 /* Button Hover Effect */
 .card .info a:hover {
-    background: linear-gradient(145deg, #3f51b5, #6b6f8d); /* Reverse gradient on hover */
+    background: linear-gradient(145deg, #222121, #cecfd3); /* Reverse gradient on hover */
+    color:rgb(0, 0, 0);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
     transform: translateY(-4px); /* Slightly lift the button on hover */
     letter-spacing: 2px; /* Increase letter spacing */
@@ -351,12 +358,15 @@ footer {
     }
 
     .card-group {
-        gap: 15px;
+        gap: 1rem;
+        border-radius: 50px;
+
     }
 
     .card {
         width: 90%;
         max-width: 320px;
+        padding: 40px;
     }
 
     .card h1 {
@@ -399,7 +409,7 @@ footer {
     border-radius: 10px;
     width: 80%;
     max-width: 700px;
-    height: 70%;
+    height: 80%;
     overflow-y: auto;
     text-align: center;
     display: flex;
