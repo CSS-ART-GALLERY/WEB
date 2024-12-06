@@ -185,9 +185,8 @@ header {
 
 /* Text container styling */
 .text-container {
-    text-align: left; /* Align text to the left */
+    text-align: center; /* Align text to the left */
     color: #FFF;
-    background-color: rgba(0, 0, 0, 0.6); /* Add a subtle background */
     padding: 20px;
     border-radius: 10px; /* Rounded corners for a cleaner look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
@@ -200,7 +199,7 @@ header {
     font-family: 'Georgia', serif; 
     line-height: 1.8; /* Improve readability */
     margin: 0; /* Remove default margin */
-    text-align: left;
+    text-align: center;
 }
 
 /* Image container styling */
@@ -208,7 +207,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 50%;
+    max-width: 80%;
     transition: transform 0.3s ease-in-out; /* Add hover interaction */
 }
 
