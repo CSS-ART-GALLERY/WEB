@@ -37,6 +37,7 @@ body {
     background: #000;
     border-bottom: 1px solid #333;
     position: relative;
+    
 }
 
 .infos-left {
@@ -132,23 +133,28 @@ header {
 
 .home-links .explore-link {
     font-size: clamp(1rem, 5vw, 1.5rem);
-    background-color: #201111;
+    background-color: #000000;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-family: Verdana;
 }
 
 .home-links .explore-link:hover {
     background-color: #fff;
     color: #000000;
+    font-family: Verdana;
+
 }
 
 .intros-section {
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Gradient from top to bottom */
         url(Images/plaza.jpg); /* Replace with your image */
+        border-image: fill 0 linear-gradient(#0001, #000);    
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -166,38 +172,69 @@ header {
     align-items: center; /* Vertically center the content */
     width: 100%;
 }
-
-.text-container {
-    text-align: left; /* Align text to the left for better readability */
-    color: #FFF;
-    padding: 20px;
-    max-width: 45%; /* Slightly reduce text width for better balance */
+.container {
+    display: flex; /* Flexbox layout */
+    flex-direction: row; /* Text on the left, image on the right */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 20px; /* Add space between text and image */
+    padding: 40px; /* Add padding around the container */
+    max-width: 1200px; /* Limit the maximum width of the container */
+    margin: 0 auto; /* Center the container on the page */
 }
+
+/* Text container styling */
+.text-container {
+    text-align: left; /* Align text to the left */
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.6); /* Add a subtle background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for a cleaner look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    max-width: 45%; /* Restrict text width */
+}
+
 .text-container h3 {
     font-size: 1.5rem;
     color: #ffffff; 
     font-family: 'Georgia', serif; 
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.8; /* Improve readability */
+    margin: 0; /* Remove default margin */
+    text-align: left;
 }
 
-
-
-.applet-container {
-               
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(27, 27, 27);
-    padding: 10px;
-
+/* Image container styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    transition: transform 0.3s ease-in-out; /* Add hover interaction */
 }
 
-#map {
-    height: 60vh; /* Adjust this value based on your design */
-    width: 100vh; /* Full width for responsiveness */
-    border: 2px solid #000;
-    z-index: 1; /* Ensure it's behind the navbar */
+.image-container img {
+    height: 500px;
+    width: 100%; /* Make the image responsive */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
 }
 
+.image-container:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack text and image vertically */
+        gap: 20px; /* Add space between stacked elements */
+    }
+    .text-container, .image-container {
+        max-width: 90%; /* Expand to fit smaller screens */
+    }
+}
 
 /* Highlights Section */
 .highlights {
@@ -295,6 +332,7 @@ header {
     color: #FFF;
     transition: opacity 0.5s ease;
     opacity: 0; /* Initially hide the info section */
+    border-radius: 0 0 10px 10px; /* Rounded corners for the bottom of the info section */
 }
 
 /* Show the info section when hovered */
@@ -311,6 +349,7 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
 }
 
 /* Button Hover Effect */
@@ -334,9 +373,6 @@ header {
     transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-
-
-
 /* Footer */
 footer {
     text-align: center;
@@ -348,39 +384,65 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .info {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .card-group {
-        gap: 1rem;
-        border-radius: 50px;
-
+    /* Adjust Info Section for Mobile */
+    .card .info {
+        position: static; /* Move info section below the image */
+        opacity: 1; /* Always show the info on smaller screens */
+        padding: 15px;
+        text-align: left;
+        border-radius: 0; /* Remove rounded corners on mobile */
     }
 
     .card {
-        width: 90%;
-        max-width: 320px;
-        padding: 40px;
+        width: 90%; /* Make cards smaller and fit well on mobile */
+        max-width: 90%;
+        padding: 20px; /* Reduce padding on mobile */
+        margin: 0 auto; /* Center the card */
+    }
+
+    .card img {
+        height: 200px; /* Reduce image size on mobile */
+        width: 100%; /* Ensure image fits well */
     }
 
     .card h1 {
-        font-size: 1.3rem;
+        font-size: 1.2rem; /* Smaller title font on mobile */
     }
 
     .card p {
-        font-size: 0.8rem;
+        font-size: 0.9rem; /* Smaller paragraph font */
     }
 
-    .card button {
-        font-size: 0.8rem;
+    .card .info a {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    /* Adjust Card Group Layout on Small Screens */
+    .card-group {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 1rem; /* Add space between cards */
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    /* Footer Adjustment */
+    footer {
+        font-size: 0.8rem; /* Smaller footer font on mobile */
+        padding: 8px;
     }
 }
+
+@media (max-width: 480px) {
+    /* Ensure cards are stacked in one column */
+    .card-group {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .card {
+        width: 100%; /* Ensure full-width cards on mobile */
+    }
+}
+
 /* Modal Styling */
 .modal {
     display: none;
@@ -389,68 +451,64 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Darkened background */
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
 }
 
 /* Show the modal when targeted */
 .modal:target {
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Modal Content Styling */
 .modal-content {
     background: #f8f5f5;
     color: #000000;
-    padding: 30px;
+    padding: 40px; /* Padding adjusted */
     border-radius: 10px;
-    width: 80%;
-    max-width: 700px;
-    height: 80%;
+    width: 90%;
+    max-width: 1000px;
+    height: 90%;
     overflow-y: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Vertically center content */
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden; /* Prevent overflow issues */
 }
 
-/* Space before and after image inside modal content */
+/* Image Styling Inside Modal */
 .modal-content img {
-    margin-top: 20px;  /* Space above the image */
-    margin-bottom: 20px; /* Space below the image */
-    width: auto;
-    height: 350;
-    object-fit: cover;
+    max-width: 100%; /* Image can grow to the width of the modal */
+    height: auto; /* Maintain the image's aspect ratio */
+    object-fit: contain; /* Ensure the image fits properly inside the container */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-height: 60vh; /* Limit the image height to 60% of the viewport height */
+    border-radius: 10px;
+    display: block; /* Ensures image takes up block space */
+    align-self: center; /* Center image horizontally */
 }
 
 /* Heading and Text Inside Modal */
 .modal-content h2 {
     font-size: 2rem;
     font-family: 'Georgia', serif;
-    margin-top: 20px;  /* Space before the heading */
+    margin-top: 20px;
 }
 
 .modal-content p {
     font-size: 1rem;
-    font-family: 'Times New Roman', serif;
-    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
     line-height: 1.6;
-    margin-bottom: 20px; /* Space after text */
-}
-
-/* Image directly inside .modal (optional, if used) */
-.modal img {
-    width: 100%;
-    max-width: 300px; /* Set the max width of the image */
-    height: auto;
-    border-radius: 5px;
-    margin-top: 20px;  /* Space before the image */
-    margin-bottom: 20px; /* Space after the image */
-    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 /* Close button for the modal */
