@@ -461,12 +461,18 @@ header {
 @media (max-width: 768px) {
     /* Adjust Info Section for Mobile */
     .card .info {
-        position: static; /* Move info section below the image */
-        opacity: 1; /* Always show the info on smaller screens */
+        position: absolute; /* Keep info positioned at the bottom of the card */
+        opacity: 0; /* Hide the info initially */
         padding: 15px;
-        text-align: left;
-        border-radius: 0; /* Remove rounded corners on mobile */
-        margin-top: 10px; /* Add margin to separate the info from the image */
+        text-align: center;
+        border-radius: 0 0 10px 10px; /* Rounded corners */
+        margin-top: 10px; /* Space from image */
+        bottom: 0; /* Position it at the bottom */
+    }
+
+    /* Show the info section only on hover for mobile */
+    .card:hover .info {
+        opacity: 1; /* Show info on hover */
     }
 
     .card {
@@ -506,6 +512,7 @@ header {
         width: 100%; /* Ensure full-width cards on mobile */
     }
 }
+
 /* Modal Styling */
 .modal {
     display: none;
@@ -526,7 +533,6 @@ header {
 .modal:target {
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 /* Modal Content Styling */
@@ -545,12 +551,10 @@ header {
     justify-content: center; /* Vertically center content */
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-   
 }
 
 /* Image Styling Inside Modal */
 .modal-content img {
-    
     max-width: 90vh; /* Image can grow to the width of the modal */
     height: auto; /* Maintain the image's aspect ratio */
     object-fit: contain; /* Ensure the image fits properly inside the container */
@@ -566,7 +570,6 @@ header {
 .modal-content h2 {
     font-size: 2rem;
     font-family: 'Georgia', serif;
-    
 }
 
 .modal-content p {
@@ -587,6 +590,8 @@ header {
     font-size: 2.5rem;
     font-weight: bold;
 }
+
+/* Location Styling */
 .location {
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -625,7 +630,6 @@ header {
     height: 20px;
 }
 
-
 /* Mobile responsive design */
 @media (max-width: 768px) {
     .location {
@@ -639,6 +643,7 @@ header {
     }
 }
 
+/* Contact Section Styling */
 .contact-content {
     background-color: #7c7a7a;
     border-image: fill 0 linear-gradient(rgba(80, 79, 79, 0.067), #0e0d0d);
@@ -650,7 +655,7 @@ header {
     align-items: center; /* Horizontally center content */
     position: relative;
     padding: 20px;
-} 
+}
 
 /* Footer */
 footer {
