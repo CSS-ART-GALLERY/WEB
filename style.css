@@ -355,7 +355,7 @@ header {
     }
 
     .text-container h3 {
-        font-size: 1.2rem;  /* Smaller font size */
+        font-size: 1rem;  /* Smaller font size */
         padding: 0 10px;
     }
 }
@@ -363,7 +363,7 @@ header {
 /* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
 @media (max-width: 768px) and (min-width: 480px) {
     .intros-section {
-        height: 70vh;  /* Adjust height for desktop site view on mobile */
+        height: 50vh;  /* Adjust height for desktop site view on mobile */
         background-position: center center; /* Keep background centered */
     }
 
