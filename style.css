@@ -234,7 +234,7 @@ header {
         url(Images/nbk.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  /* This will keep the image cover the container */
     width: 100%;
     height: 100vh;  /* Full viewport height */
     display: flex;
@@ -244,26 +244,27 @@ header {
     padding-bottom: 100px;
 }
 
-/* Responsive Design for tablets (max-width: 768px) */
-@media (max-width: 768px) {
+/* For devices with screen width <= 1024px (tablets, smaller screens) */
+@media (max-width: 1024px) {
     .home-section {
-        background-size: cover; /* Ensure the image still covers, but scales better */
-        height: 60vh;  /* Reduce background height on tablets */
+        height: 80vh; /* Adjust the background size to fit better on tablet screens */
+        background-position: center; /* Keep it centered */
     }
 }
 
-/* For smaller screens (max-width: 480px) */
+/* For smaller screens (<= 768px) */
+@media (max-width: 768px) {
+    .home-section {
+        height: 60vh;  /* Adjust background size to fit better on mobile screens */
+        background-position: top center; /* Focus the top part of the image */
+    }
+}
+
+/* For even smaller screens (<= 480px) */
 @media (max-width: 480px) {
     .home-section {
-        background-size: cover; /* Keep it responsive */
-        height: 40vh;  /* Further reduce the background image height for mobile */
-        background-position: top center; /* Adjust the background position to the top */
-    }
-
-    /* Adjust explore link size */
-    .home-links .explore-link {
-        font-size: 1rem; /* Adjust explore link font size */
-        padding: 10px 15px; /* Smaller padding for mobile */
+        height: 50vh;  /* Adjust background size to fit even better on very small screens */
+        background-position: top center; /* Focus the top part of the image */
     }
 }
 
@@ -293,16 +294,40 @@ header {
 .intros-section {
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
-        url(Images/backg.png);  /* Adjust the background image */
+        url(Images/backg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  /* Keep the image covering the container */
     width: 100%;
     height: 100vh;  /* Full viewport height */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0;
+}
+
+/* For devices with screen width <= 1024px (tablets, smaller screens) */
+@media (max-width: 1024px) {
+    .intros-section {
+        height: 80vh; /* Adjust the intro background to fit better on tablet screens */
+        background-position: center; /* Keep the background centered */
+    }
+}
+
+/* For smaller screens (<= 768px) */
+@media (max-width: 768px) {
+    .intros-section {
+        height: 60vh;  /* Adjust background size to fit better on mobile screens */
+        background-position: top center; /* Focus the top part of the image */
+    }
+}
+
+/* For even smaller screens (<= 480px) */
+@media (max-width: 480px) {
+    .intros-section {
+        height: 50vh;  /* Further reduce the height on very small screens */
+        background-position: top center; /* Focus the top part of the image */
+    }
 }
 
 /* Flexbox layout for text and image */
@@ -337,7 +362,7 @@ header {
 
 .text-container h3 {
     font-size: 1.5rem;
-    color: #ffffff; 
+    color: #ffffff;
     font-family: 'Georgia', serif;
     line-height: 1.8;
     margin: 0;
@@ -365,7 +390,7 @@ header {
     transform: scale(1.05);
 }
 
-/* Responsive design for tablets (max-width: 768px) */
+/* Responsive design for smaller screens (max-width 768px) */
 @media (max-width: 768px) {
     /* Stack text and image vertically */
     .container {
@@ -399,7 +424,7 @@ header {
     }
 }
 
-/* For very small screens (max-width: 480px) */
+/* For very small screens (max-width 480px) */
 @media (max-width: 480px) {
     .text-container h3 {
         font-size: 1rem; /* Further reduce text size */
@@ -421,6 +446,7 @@ header {
         padding-bottom: 40px; /* More padding for mobile */
     }
 }
+
 
 
 
