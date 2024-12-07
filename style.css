@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     color: #FFF;
+    padding: 0;
 }
 
 /* Intro Section */
@@ -117,7 +118,7 @@ header {
         font-size: 1.5rem; /* Smaller heading */
     }
     .intro p {
-        font-size: 0.9rem; /* Smaller text */
+        font-size: 1rem; /* Slightly smaller text */
     }
 
     .infos {
@@ -153,22 +154,28 @@ header {
 
 /* For devices smaller than 480px (mobile phones) */
 @media (max-width: 480px) {
+    body {
+        font-size: 0.9rem; /* Make the body font size smaller for mobile */
+    }
+
     .intro h1 {
-        font-size: 1.3rem; /* Even smaller heading */
+        font-size: 1.3rem; /* Smaller heading */
     }
     .intro p {
-        font-size: 0.8rem; /* Adjust text size for small screens */
+        font-size: 0.9rem; /* Adjust text size for small screens */
     }
 
     .infos {
         padding: 10px;
+        flex-direction: column; /* Stack elements */
+        text-align: left; /* Align text left for readability */
     }
 
     .infos-left,
     .infos-right {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%; /* Take full width */
         gap: 10px;
+        text-align: left; /* Align text left */
     }
 
     .gallery-title {
@@ -182,10 +189,20 @@ header {
     .nav-links {
         flex-direction: column;
         gap: 15px;
+        width: 100%; /* Full width */
+        align-items: center;
     }
 
     .nav-links a {
-        font-size: 1rem; /* Further reduce font size */
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .infos-right {
+        margin-top: 10px; /* Give some spacing between social and email */
+    }
+
+    .infos-right .social a {
+        font-size: 1.2rem; /* Slightly larger icons for easier tapping */
     }
 }
 
@@ -210,6 +227,7 @@ header {
         font-size: 1.4rem; /* Larger font for large screens */
     }
 }
+
 
 /* Home Section */
 .home-section {
