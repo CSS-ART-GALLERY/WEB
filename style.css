@@ -298,23 +298,24 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* Full height of viewport */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    overflow: hidden; /* Prevent overflow of background or content */
+    overflow: hidden; /* Prevent overflow of content outside background */
 }
 
 /* Flexbox Layout for Text and Image */
 .intros-content {
     display: flex;
-    justify-content: center; /* Center the content */
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
+    flex-direction: row; /* Keep text and image side by side */
     gap: 20px;
-    padding: 20px;
+    width: 90%;  /* Limit the width to ensure content stays within the background */
+    max-width: 1200px; /* Max width for large screens */
+    margin: 0 auto; /* Center the content */
 }
 
 /* Container for Text and Image */
@@ -325,6 +326,7 @@ header {
     align-items: center;
     gap: 20px;
     width: 100%;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
 }
 
 /* Text Container */
@@ -334,7 +336,7 @@ header {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 45%;
+    width: 45%; /* Ensures text takes up 45% of the container */
 }
 
 .text-container h3 {
@@ -350,13 +352,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 45%;
+    width: 45%; /* Ensures image takes up 45% of the container */
     transition: transform 0.3s ease-in-out;
 }
 
 .image-container img {
     width: 100%;
-    height: 500px;
+    height: auto;
+    max-height: 500px; /* Set a max height to prevent image from growing too large */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -376,29 +379,29 @@ header {
     }
 
     .container {
-        flex-direction: column;
+        flex-direction: column; /* Stack text and image vertically on smaller screens */
         padding: 10px;
     }
 
     .text-container, .image-container {
-        max-width: 90%; /* Ensure text and image fit well */
+        width: 90%; /* Ensure text and image fit well */
     }
 
     .text-container h3 {
         font-size: 1.2rem; /* Adjust text size for tablets */
-        text-align: center;
+        text-align: center; /* Center text on smaller screens */
     }
 
     .image-container img {
-        height: 300px; /* Reduce image height for tablets */
+        max-height: 300px; /* Adjust image height for tablets */
     }
 }
 
 /* For smaller screens (<= 768px) */
 @media (max-width: 768px) {
     .intros-section {
-        height: 60vh; /* Adjust height for mobile */
-        background-position: top center; /* Focus on the top part of the image */
+        height: 60vh; /* Adjust background size on mobile */
+        background-position: top center; /* Focus the top part of the image */
     }
 
     .container {
@@ -407,16 +410,16 @@ header {
     }
 
     .text-container, .image-container {
-        max-width: 90%;
+        width: 90%; /* Ensure they fit properly */
     }
 
     .text-container h3 {
         font-size: 1.2rem;
-        text-align: center; /* Center text */
+        text-align: center; /* Center text on smaller screens */
     }
 
     .image-container img {
-        height: 250px; /* Reduce image height */
+        max-height: 250px; /* Adjust image height for mobile */
     }
 }
 
@@ -424,15 +427,16 @@ header {
 @media (max-width: 480px) {
     .intros-section {
         height: 50vh; /* Further reduce height for very small screens */
-        background-position: top center;
+        background-position: top center; /* Keep focus on top of image */
     }
 
     .text-container h3 {
         font-size: 1rem; /* Further reduce text size */
+        padding: 15px; /* Add padding for better readability */
     }
 
     .image-container img {
-        height: 200px; /* Reduce image height further */
+        max-height: 200px; /* Further reduce image height */
     }
 }
 
