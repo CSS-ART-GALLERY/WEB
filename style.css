@@ -303,7 +303,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 0;
-    overflow: hidden;  /* Prevent overflow of content outside background */
+    overflow: hidden;
 }
 
 /* Flexbox Layout for Text and Image */
@@ -336,7 +336,7 @@ header {
     width: 50%;  /* Text container takes 50% of the section */
     height: 100%;  /* Ensure text container is the same height as the image */
     max-width: 600px;  /* Limit text width for large screens */
-    box-sizing: border-box;  /* Make sure padding doesn’t break layout */
+    box-sizing: border-box;
 }
 
 /* Text Heading Styling */
