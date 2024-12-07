@@ -10,7 +10,6 @@ body {
     color: #FFF;
     padding: 0;
 }
-
 /* Intro Section */
 .intro {
     text-align: center;
@@ -138,13 +137,14 @@ header {
         font-size: 1.5rem; /* Adjust gallery title size */
     }
 
+    /* Ensure navbar stays horizontal */
     .navigation {
-        flex-direction: column; /* Stack navigation items vertically */
+        flex-direction: row; /* Keep the navigation horizontal */
     }
 
     .nav-links {
-        flex-direction: column; /* Stack nav items */
-        gap: 20px;
+        flex-direction: row; /* Keep nav items horizontal */
+        gap: 20px; /* Maintain space between items */
     }
 
     .nav-links a {
@@ -187,7 +187,7 @@ header {
     }
 
     .nav-links {
-        flex-direction: column;
+        flex-direction: row; /* Keep nav items horizontal */
         gap: 15px;
         width: 100%; /* Full width */
         align-items: center;
@@ -227,6 +227,7 @@ header {
         font-size: 1.4rem; /* Larger font for large screens */
     }
 }
+
 /* Home Section */
 .home-section {
     background-image: 
