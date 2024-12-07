@@ -296,7 +296,7 @@ header {
         url(Images/backg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  /* Ensures background image covers the whole area */
     width: 100%;
     height: 100vh;  /* Full height of the viewport */
     display: flex;
@@ -306,147 +306,35 @@ header {
     overflow: hidden;
 }
 
-/* Flexbox Layout for Text and Image */
-.intros-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px; /* Max width for large screens */
-    gap: 20px;  /* Space between text and image */
+/* Adjust height for larger screens */
+@media (min-width: 1024px) {
+    .intros-section {
+        height: 100vh; /* Keep full viewport height for larger screens */
+        background-position: center center; /* Keep the background centered */
+    }
 }
-
-/* Container for Text and Image */
-.container {
-    display: flex;
-    flex-direction: row;  /* Keep text and image side by side */
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    flex-wrap: no-wrap; /* Prevent wrapping of text and image */
-}
-
-/* Text Container */
-.text-container {
-    text-align: left;
-    color: #FFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 50%;  /* Text container takes 50% of the section */
-    height: 100%;  /* Ensure text container is the same height as the image */
-    max-width: 600px;  /* Limit text width for large screens */
-    box-sizing: border-box;
-}
-
-/* Text Heading Styling */
-.text-container h3 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-family: 'Georgia', serif;
-    line-height: 1.8;
-    margin: 0;
-    text-align: left;
-}
-
-/* Image Container */
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;  /* Make image container take 50% of the section */
-    transition: transform 0.3s ease-in-out;
-    height: 100%;  /* Make image container the same height as the text */
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;  /* Ensure the image does not exceed 500px height */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.image-container:hover img {
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
 
 /* For devices with screen width <= 1024px (tablets, smaller screens) */
 @media (max-width: 1024px) {
     .intros-section {
-        height: 80vh;  /* Adjust the height of the section */
-    }
-
-    .container {
-        flex-direction: row;  /* Keep text and image side by side on tablets */
-        padding: 10px;
-    }
-
-    .text-container, .image-container {
-        width: 48%;  /* Adjust width to 48% for better fit */
-        height: 100%;  /* Make sure text and image are the same height */
-    }
-
-    .text-container h3 {
-        font-size: 1.2rem;  /* Adjust font size for tablets */
-        text-align: left;
-    }
-
-    .image-container img {
-        max-height: 350px;  /* Adjust image height for tablets */
+        height: 80vh;  /* Adjust height for tablets and small screens */
+        background-position: top center;  /* Focus on the top part of the background image */
     }
 }
 
 /* For smaller screens (<= 768px) */
 @media (max-width: 768px) {
     .intros-section {
-        height: 60vh;  /* Adjust background height */
-        background-position: top center;  /* Focus the top part of the image */
-    }
-
-    .container {
-        flex-direction: row;  /* Keep text and image side by side */
-        gap: 15px;  /* Reduce space between text and image */
-    }
-
-    .text-container, .image-container {
-        width: 45%;  /* Reduce width for better fit on mobile */
-        height: 100%;  /* Make sure text and image are the same height */
-    }
-
-    .text-container h3 {
-        font-size: 1.2rem;  /* Adjust font size for mobile */
-        text-align: left;
-    }
-
-    .image-container img {
-        max-height: 250px;  /* Adjust image height for mobile */
+        height: 70vh;  /* Adjust background height for mobile screens */
+        background-position: top center; /* Focus on the top part of the image */
     }
 }
 
 /* For very small screens (<= 480px) */
 @media (max-width: 480px) {
     .intros-section {
-        height: 50vh;  /* Further reduce height for very small screens */
+        height: 60vh;  /* Further reduce the height on very small screens */
         background-position: top center;  /* Focus on the top part of the image */
-    }
-
-    .container {
-        flex-direction: row;  /* Keep text and image side by side */
-        padding: 10px;
-    }
-
-    .text-container h3 {
-        font-size: 1rem;  /* Further reduce text size */
-        padding: 10px;
-    }
-
-    .image-container img {
-        max-height: 200px;  /* Further reduce image height */
     }
 }
 
