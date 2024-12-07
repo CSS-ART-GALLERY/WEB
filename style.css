@@ -418,7 +418,7 @@ header {
     border-radius: 0 0 10px 10px; /* Rounded corners for the bottom of the info section */
 }
 
-/* Show the info section when hovered */
+/* Show the info section when hovered (desktop) */
 .card:hover .info {
     opacity: 1; /* Make info visible on hover */
 }
@@ -470,9 +470,9 @@ header {
         bottom: 0; /* Position it at the bottom */
     }
 
-    /* Show the info section only on hover for mobile */
-    .card:hover .info {
-        opacity: 1; /* Show info on hover */
+    /* Show the info section only on click (mobile) */
+    .card:active .info, .card:focus-within .info {
+        opacity: 1; /* Show info when card is active (clicked/tapped) */
     }
 
     .card {
@@ -512,6 +512,7 @@ header {
         width: 100%; /* Ensure full-width cards on mobile */
     }
 }
+
 
 /* Modal Styling */
 .modal {
