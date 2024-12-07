@@ -19,12 +19,12 @@ body {
 .intro h1 {
     font-size: 2rem;
     margin-bottom: 10px;
-     font-family: 'Georgia', serif; /* Classic serif font for historical feel */
+    font-family: 'Georgia', serif; /* Classic serif font for historical feel */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Slight shadow to enhance readability */
 }
 .intro p {
     font-size: 1rem;
-    font-family: 'Georgia', serif; 
+    font-family: 'Georgia', serif;
     color: #3f3333;
 }
 
@@ -37,7 +37,6 @@ body {
     background: #000;
     border-bottom: 1px solid #333;
     position: relative;
-    
 }
 
 .infos-left {
@@ -108,6 +107,108 @@ header {
 
 .nav-links a:hover {
     color: #848386;
+}
+
+/* Responsive Styles */
+
+/* For devices smaller than 768px (tablets) */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 1.5rem; /* Smaller heading */
+    }
+    .intro p {
+        font-size: 0.9rem; /* Smaller text */
+    }
+
+    .infos {
+        flex-direction: column; /* Stack items vertically */
+        padding: 15px;
+    }
+    .infos-left {
+        margin-bottom: 10px;
+    }
+    .infos-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .gallery-title {
+        font-size: 1.5rem; /* Adjust gallery title size */
+    }
+
+    .navigation {
+        flex-direction: column; /* Stack navigation items vertically */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack nav items */
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem; /* Slightly smaller font for better readability */
+    }
+}
+
+/* For devices smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 1.3rem; /* Even smaller heading */
+    }
+    .intro p {
+        font-size: 0.8rem; /* Adjust text size for small screens */
+    }
+
+    .infos {
+        padding: 10px;
+    }
+
+    .infos-left,
+    .infos-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .gallery-title {
+        font-size: 1.2rem; /* Smaller title for mobile */
+    }
+
+    .navigation {
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Further reduce font size */
+    }
+}
+
+/* Optional: For very large screens like desktop monitors */
+@media (min-width: 1200px) {
+    .intro h1 {
+        font-size: 2.5rem; /* Larger heading for desktop */
+    }
+    .intro p {
+        font-size: 1.2rem; /* Slightly larger text for readability */
+    }
+
+    .infos {
+        padding: 15px 100px; /* More padding for larger screens */
+    }
+
+    .nav-links {
+        gap: 50px; /* More space between navbar links */
+    }
+
+    .nav-links a {
+        font-size: 1.4rem; /* Larger font for large screens */
+    }
 }
 
 /* Home Section */
@@ -375,10 +476,11 @@ header {
 /* Footer */
 footer {
     text-align: center;
-    padding: 10px;
+    justify-content: center;
     background-color: #000;
-    color: #fff;
-    font-size: 0.9rem;
+    color:  #ffffff;
+    font-size: 1.2rem;
+    padding: 10px;
 }
 
 /* Responsive Design */
@@ -573,4 +675,17 @@ footer {
         font-size: 1rem;
         padding: 10px;
     }
+}
+
+.contact-content {
+    background-color: #7c7a7a;
+    border-image: fill 0 linear-gradient(rgba(80, 79, 79, 0.067), #0e0d0d);
+    width: 100%;
+    height: 55vh; /* Adjusted to provide more space for text and icon */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    position: relative;
+    padding: 20px;
 }
