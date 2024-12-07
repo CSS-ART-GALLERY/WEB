@@ -360,16 +360,27 @@ header {
     }
 }
 
-/* For desktop emulation on mobile devices (CP using desktop view mode) */
+/* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
 @media (max-width: 768px) and (min-width: 480px) {
     .intros-section {
-        height: 75vh;  /* Slightly reduced height for desktop view mode on mobile */
+        height: 70vh;  /* Adjust height for desktop site view on mobile */
         background-position: center center; /* Keep background centered */
     }
 
     .text-container h3 {
         font-size: 1.5rem; /* Adjust font size for the desktop view on mobile */
         padding: 0 20px; /* Add padding for readability */
+    }
+}
+
+/* Adjust for actual desktop view on desktop (>= 1024px) */
+@media (min-width: 1024px) {
+    .intros-section {
+        height: 100vh; /* Ensure the background height is correct for large screens */
+    }
+
+    .text-container h3 {
+        font-size: 2rem;
     }
 }
 
