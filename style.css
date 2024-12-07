@@ -296,8 +296,8 @@ header {
         url(Images/backg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;  /* Keep the image covering the container */
-    width   : 100%;
+    background-size: cover;
+    width: 100%;
     height: 100vh;  /* Full height of the viewport */
     display: flex;
     justify-content: center;
@@ -320,14 +320,12 @@ header {
 .container {
     display: flex;
     flex-direction: row;  /* Keep text and image side by side */
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
     width: 100%;
     flex-wrap: no-wrap; /* Prevent wrapping of text and image */
 }
 
-/* Text Container */
 /* Text Container */
 .text-container {
     text-align: left;
