@@ -292,7 +292,7 @@ header {
 /* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
 @media (max-width: 768px) and (min-width: 480px) {
     .home-section {
-        height: 50vh;  /* Adjust height for desktop site view on mobile */
+        height: 30vh;  /* Adjust height for desktop site view on mobile */
         background-position: center center; /* Keep background centered */
     }
 
