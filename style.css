@@ -250,7 +250,7 @@ header {
     height: 100vh;  /* Full viewport height */
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-end;  /* Keep the content aligned to the bottom */
     text-align: center;
     padding-bottom: 100px;  /* Bottom padding for better text alignment */
 }
@@ -259,7 +259,11 @@ header {
 @media (max-width: 1024px) {
     .home-section {
         height: 60vh; /* Adjust background size for tablet screens */
-        background-position: center; /* Keep the background centered */
+        background-position: center; /* Keep the background image centered */
+    }
+
+    .home-content {
+        margin-bottom: 30px; /* Adjust the bottom margin to push text/button further down */
     }
 
     .home-content h3 {
@@ -275,6 +279,10 @@ header {
         padding-bottom: 50px;  /* Adjust padding for smaller screens */
     }
 
+    .home-content {
+        margin-bottom: 40px; /* Increase bottom margin to push content further down */
+    }
+
     .home-content h3 {
         font-size: 1.4rem;  /* Reduce text size further */
     }
@@ -286,6 +294,10 @@ header {
         height: 50vh;  /* Adjust background size to fit even better on very small screens */
         background-position: top center; /* Focus on the top of the image */
         padding-bottom: 30px; /* Further adjust padding for very small screens */
+    }
+
+    .home-content {
+        margin-bottom: 30px; /* Further reduce bottom margin */
     }
 
     .home-content h3 {
@@ -301,6 +313,10 @@ header {
         padding-bottom: 20px; /* Adjust padding to ensure text is visible */
     }
 
+    .home-content {
+        margin-bottom: 20px; /* Adjust bottom margin for desktop emulation */
+    }
+
     .home-content h3 {
         font-size: 1.5rem; /* Adjust font size for desktop view on mobile */
     }
@@ -311,6 +327,10 @@ header {
     .home-section {
         height: 100vh; /* Full height for large screens */
         padding-bottom: 100px; /* Keep enough bottom padding for content */
+    }
+
+    .home-content {
+        margin-bottom: 50px; /* Ensure there's a decent gap at the bottom for text */
     }
 
     .home-content h3 {
@@ -340,6 +360,7 @@ header {
     color: #000000;
     font-family: Verdana;
 }
+
 
 
 /* Intro Section */
