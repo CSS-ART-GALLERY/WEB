@@ -42,6 +42,7 @@ body {
 .infos-left {
     display: flex;
     gap: 20px;
+    flex: 1; /* Take available space */
 }
 
 .gallery-title {
@@ -55,6 +56,8 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: flex-end; /* Align to the right side */
+    flex: 1; /* Take available space */
 }
 
 .infos-right .social a,
@@ -129,8 +132,9 @@ header {
         margin-bottom: 10px;
     }
     .infos-right {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Keep icons horizontally aligned */
+        justify-content: flex-end; /* Keep icons on the right side */
+        align-items: center;
         gap: 10px;
     }
 
@@ -230,6 +234,7 @@ header {
         font-size: 1.4rem; /* Larger font for large screens */
     }
 }
+
 
 
 /* Home Section */
