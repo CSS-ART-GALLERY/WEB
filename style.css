@@ -289,12 +289,13 @@ header {
     color: #000000;
     font-family: Verdana;
 }
+
 /* Intro Section */
 .intros-section {
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
         url(Images/backg.png);
-    background-position: center;
+    background-position: center center; /* Always center the background */
     background-repeat: no-repeat;
     background-size: cover;  /* Ensures background image covers the whole area */
     width: 100%;
@@ -304,39 +305,62 @@ header {
     align-items: center;
     padding: 0;
     overflow: hidden;
+    text-align: center;  /* Center the text */
 }
 
 /* Adjust height for larger screens */
 @media (min-width: 1024px) {
     .intros-section {
-        height: 100vh; /* Keep full viewport height for larger screens */
-        background-position: center center; /* Keep the background centered */
+        height: 100vh; /* Full viewport height for larger screens */
+        background-position: center center; /* Keep background centered */
+    }
+
+    .text-container h3 {
+        font-size: 2rem; /* Font size for large screens */
+        line-height: 1.6;
     }
 }
 
 /* For devices with screen width <= 1024px (tablets, smaller screens) */
 @media (max-width: 1024px) {
     .intros-section {
-        height: 80vh;  /* Adjust height for tablets and small screens */
-        background-position: top center;  /* Focus on the top part of the background image */
+        height: 80vh;  /* Adjust background height for tablets */
+        background-position: top center; /* Focus on the top part of the image */
+    }
+
+    .text-container h3 {
+        font-size: 1.6rem;
+        padding: 0 20px; /* Add some padding on smaller screens */
     }
 }
 
 /* For smaller screens (<= 768px) */
 @media (max-width: 768px) {
     .intros-section {
-        height: 70vh;  /* Adjust background height for mobile screens */
-        background-position: top center; /* Focus on the top part of the image */
+        height: 70vh;  /* Adjust background height for mobile */
+        background-position: top center; /* Focus on the top of the background image */
+    }
+
+    .text-container h3 {
+        font-size: 1.4rem;  /* Smaller font for mobile */
+        padding: 0 15px;
     }
 }
 
 /* For very small screens (<= 480px) */
 @media (max-width: 480px) {
     .intros-section {
-        height: 60vh;  /* Further reduce the height on very small screens */
-        background-position: top center;  /* Focus on the top part of the image */
+        height: 60vh;  /* Further reduce height for very small screens */
+        background-position: top center; /* Focus on the top part */
+    }
+
+    .text-container h3 {
+        font-size: 1.2rem;  /* Smaller font size */
+        padding: 0 10px;
     }
 }
+
+
 
 
 
