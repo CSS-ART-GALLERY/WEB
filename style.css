@@ -289,7 +289,6 @@ header {
     color: #000000;
     font-family: Verdana;
 }
-
 /* Intro Section */
 .intros-section {
     background-image: 
@@ -320,13 +319,43 @@ header {
         height: 60vh;  /* Adjust background size to fit better on mobile screens */
         background-position: top center; /* Focus the top part of the image */
     }
+
+    /* Adjust layout for the content inside intro */
+    .container {
+        flex-direction: column; /* Stack the text and image vertically */
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .text-container, .image-container {
+        max-width: 90%; /* Ensure content fits well on mobile screens */
+        margin: 0 auto; /* Center the content */
+    }
+
+    .text-container h3 {
+        font-size: 1.2rem; /* Adjust text size for smaller screens */
+        text-align: center; /* Center the text on smaller screens */
+        padding: 10px 0; /* Add padding to prevent text from touching edges */
+    }
+
+    .image-container img {
+        height: 250px; /* Reduce image height for mobile */
+    }
 }
 
 /* For even smaller screens (<= 480px) */
 @media (max-width: 480px) {
     .intros-section {
-        height: 50vh;  /* Further reduce the height on very small screens */
+        height: 50vh;  /* Further reduce height for very small screens */
         background-position: top center; /* Focus the top part of the image */
+    }
+
+    .text-container h3 {
+        font-size: 1rem; /* Further reduce text size */
+        padding: 10px; /* Add padding for better readability */
+    }
+
+    .image-container img {
+        height: 200px; /* Reduce the height of the image even more */
     }
 }
 
@@ -390,62 +419,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Responsive design for smaller screens (max-width 768px) */
-@media (max-width: 768px) {
-    /* Stack text and image vertically */
-    .container {
-        flex-direction: column;
-        gap: 20px; /* Add space between stacked elements */
-    }
-
-    .text-container, .image-container {
-        max-width: 90%; /* Ensure they fit the screen */
-    }
-
-    .text-container h3 {
-        font-size: 1.2rem; /* Adjust text size for smaller screens */
-        text-align: center; /* Center text on small screens */
-    }
-
-    /* Reduce padding and height of home section */
-    .home-section {
-        padding-bottom: 60px; /* Reduce bottom padding */
-    }
-
-    /* Adjust explore link for smaller screens */
-    .home-links .explore-link {
-        font-size: 1.2rem;
-        padding: 10px 15px;
-    }
-
-    /* Reduce image size for smaller screens */
-    .image-container img {
-        height: 300px; /* Reduce height for mobile */
-    }
-}
-
-/* For very small screens (max-width 480px) */
-@media (max-width: 480px) {
-    .text-container h3 {
-        font-size: 1rem; /* Further reduce text size */
-        padding: 15px; /* Add padding for better readability */
-    }
-
-    .home-links .explore-link {
-        font-size: 1rem; /* Adjust explore link font size */
-        padding: 8px 12px; /* Smaller padding for mobile */
-    }
-
-    /* Further reduce image height */
-    .image-container img {
-        height: 250px;
-    }
-
-    /* Reduce padding for home section */
-    .home-section {
-        padding-bottom: 40px; /* More padding for mobile */
-    }
-}
 
 
 
