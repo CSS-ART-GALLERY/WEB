@@ -60,6 +60,7 @@ body {
     justify-content: flex-end; /* Align to the right side */
 }
 
+/* Social icons styling */
 .infos-right .social a,
 .infos-right .infos-link a {
     color: #FFF;
@@ -125,17 +126,18 @@ header {
     }
 
     .infos {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: row; /* Ensure it stays in a row */
         padding: 15px;
     }
+
     .infos-left {
-        margin-bottom: 10px;
+        margin-bottom: 0; /* Ensure there's no space below the left side content */
+        flex: 1; /* Ensure it takes available space */
     }
+
     .infos-right {
-        flex-direction: row; /* Keep icons horizontally aligned */
-        justify-content: flex-end; /* Keep icons on the right side */
-        align-items: center;
-        gap: 10px;
+        flex: 1; /* Ensure it takes available space */
+        justify-content: flex-end; /* Align the icons to the right */
     }
 
     .gallery-title {
@@ -173,7 +175,7 @@ header {
 
     .infos {
         padding: 10px;
-        flex-direction: column; /* Stack elements */
+        flex-direction: row; /* Keep elements on the same row */
         text-align: left; /* Align text left for readability */
     }
 
