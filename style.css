@@ -296,90 +296,38 @@ header {
         url(Images/backg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;  /* Keep the image covering the container */
+    background-size: cover;
     width: 100%;
-    height: 100vh;  /* Full viewport height */
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0;
+    overflow: hidden; /* Prevent overflow of background or content */
 }
 
-/* For devices with screen width <= 1024px (tablets, smaller screens) */
-@media (max-width: 1024px) {
-    .intros-section {
-        height: 80vh; /* Adjust the intro background to fit better on tablet screens */
-        background-position: center; /* Keep the background centered */
-    }
-}
-
-/* For smaller screens (<= 768px) */
-@media (max-width: 768px) {
-    .intros-section {
-        height: 60vh;  /* Adjust background size to fit better on mobile screens */
-        background-position: top center; /* Focus the top part of the image */
-    }
-
-    /* Adjust layout for the content inside intro */
-    .container {
-        flex-direction: column; /* Stack the text and image vertically */
-        padding: 20px; /* Reduce padding on smaller screens */
-    }
-
-    .text-container, .image-container {
-        max-width: 90%; /* Ensure content fits well on mobile screens */
-        margin: 0 auto; /* Center the content */
-    }
-
-    .text-container h3 {
-        font-size: 1.2rem; /* Adjust text size for smaller screens */
-        text-align: center; /* Center the text on smaller screens */
-        padding: 10px 0; /* Add padding to prevent text from touching edges */
-    }
-
-    .image-container img {
-        height: 250px; /* Reduce image height for mobile */
-    }
-}
-
-/* For even smaller screens (<= 480px) */
-@media (max-width: 480px) {
-    .intros-section {
-        height: 50vh;  /* Further reduce height for very small screens */
-        background-position: top center; /* Focus the top part of the image */
-    }
-
-    .text-container h3 {
-        font-size: 1rem; /* Further reduce text size */
-        padding: 10px; /* Add padding for better readability */
-    }
-
-    .image-container img {
-        height: 200px; /* Reduce the height of the image even more */
-    }
-}
-
-/* Flexbox layout for text and image */
+/* Flexbox Layout for Text and Image */
 .intros-content {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Center the content */
     align-items: center;
     width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Container for text and image */
+/* Container for Text and Image */
 .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
 }
 
-/* Text container styling */
+/* Text Container */
 .text-container {
     text-align: left;
     color: #FFF;
@@ -397,21 +345,21 @@ header {
     margin: 0;
 }
 
-/* Image container styling */
+/* Image Container */
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
+    max-width: 45%;
     transition: transform 0.3s ease-in-out;
 }
 
 .image-container img {
-    height: 500px;
     width: 100%;
+    height: 500px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -419,8 +367,74 @@ header {
     transform: scale(1.05);
 }
 
+/* Responsive Design */
 
+/* For devices with screen width <= 1024px (tablets, smaller screens) */
+@media (max-width: 1024px) {
+    .intros-section {
+        height: 80vh; /* Adjust height on tablets */
+    }
 
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .text-container, .image-container {
+        max-width: 90%; /* Ensure text and image fit well */
+    }
+
+    .text-container h3 {
+        font-size: 1.2rem; /* Adjust text size for tablets */
+        text-align: center;
+    }
+
+    .image-container img {
+        height: 300px; /* Reduce image height for tablets */
+    }
+}
+
+/* For smaller screens (<= 768px) */
+@media (max-width: 768px) {
+    .intros-section {
+        height: 60vh; /* Adjust height for mobile */
+        background-position: top center; /* Focus on the top part of the image */
+    }
+
+    .container {
+        flex-direction: column; /* Stack text and image vertically */
+        padding: 15px;
+    }
+
+    .text-container, .image-container {
+        max-width: 90%;
+    }
+
+    .text-container h3 {
+        font-size: 1.2rem;
+        text-align: center; /* Center text */
+    }
+
+    .image-container img {
+        height: 250px; /* Reduce image height */
+    }
+}
+
+/* For very small screens (<= 480px) */
+@media (max-width: 480px) {
+    .intros-section {
+        height: 50vh; /* Further reduce height for very small screens */
+        background-position: top center;
+    }
+
+    .text-container h3 {
+        font-size: 1rem; /* Further reduce text size */
+    }
+
+    .image-container img {
+        height: 200px; /* Reduce image height further */
+    }
+}
 
 
 /* Highlights Section */
