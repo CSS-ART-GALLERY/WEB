@@ -88,13 +88,14 @@ header {
 
 .navigation {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 30px; /* Space between the links */
 }
 
 .nav-links a {
@@ -137,14 +138,15 @@ header {
         font-size: 1.5rem; /* Adjust gallery title size */
     }
 
-    /* Ensure navbar stays horizontal */
+    /* Keep navbar links horizontal */
     .navigation {
-        flex-direction: row; /* Keep the navigation horizontal */
+        flex-direction: row; /* Keep the navigation in a row */
+        justify-content: center; /* Center the navigation items horizontally */
     }
 
     .nav-links {
         flex-direction: row; /* Keep nav items horizontal */
-        gap: 20px; /* Maintain space between items */
+        gap: 20px; /* Space between links */
     }
 
     .nav-links a {
@@ -191,6 +193,7 @@ header {
         gap: 15px;
         width: 100%; /* Full width */
         align-items: center;
+        justify-content: center; /* Center items horizontally */
     }
 
     .nav-links a {
@@ -227,6 +230,7 @@ header {
         font-size: 1.4rem; /* Larger font for large screens */
     }
 }
+
 
 /* Home Section */
 .home-section {
