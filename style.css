@@ -152,7 +152,7 @@ header {
 .intros-section {
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Gradient from top to bottom */
-        url(Images/plaza.jpg); /* Replace with your image */
+        url(Images/backg.png); /* Replace with your image */
         border-image: fill 0 linear-gradient(#0001, #000);    
 
     background-position: center;
@@ -455,12 +455,14 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow: hidden; /* Prevent overflow issues */
 }
 
 /* Show the modal when targeted */
 .modal:target {
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 /* Modal Content Styling */
@@ -472,24 +474,25 @@ footer {
     width: 90%;
     max-width: 1000px;
     height: 90%;
-    overflow-y: auto;
+    overflow: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center content */
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden; /* Prevent overflow issues */
+   
 }
 
 /* Image Styling Inside Modal */
 .modal-content img {
-    max-width: 100%; /* Image can grow to the width of the modal */
+    
+    max-width: 90vh; /* Image can grow to the width of the modal */
     height: auto; /* Maintain the image's aspect ratio */
     object-fit: contain; /* Ensure the image fits properly inside the container */
     margin-top: 20px;
     margin-bottom: 20px;
-    max-height: 60vh; /* Limit the image height to 60% of the viewport height */
+    max-height: 40vh; /* Limit the image height to 60% of the viewport height */
     border-radius: 10px;
     display: block; /* Ensures image takes up block space */
     align-self: center; /* Center image horizontally */
@@ -499,7 +502,7 @@ footer {
 .modal-content h2 {
     font-size: 2rem;
     font-family: 'Georgia', serif;
-    margin-top: 20px;
+    
 }
 
 .modal-content p {
@@ -519,4 +522,55 @@ footer {
     text-decoration: none;
     font-size: 2.5rem;
     font-weight: bold;
+}
+.location {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-right: 10px;
+}
+
+/* Styling for the location link */
+.location a {
+    font-size: 1.2rem;
+    color: #4e4e4e;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hover effect for the link */
+.location a:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Icon inside the link */
+.location a img {
+    width: 40px;
+    height: 20px;
+}
+
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    .location {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .location a {
+        font-size: 1rem;
+        padding: 10px;
+    }
 }
