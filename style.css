@@ -268,7 +268,7 @@ header {
 /* For smaller screens (<= 768px) */
 @media (max-width: 768px) {
     .home-section {
-        height: 60vh;  /* Adjust background size to fit better on mobile screens */
+        height: 50vh;  /* Adjust background size to fit better on mobile screens */
         background-position: top center; /* Focus on the top part of the image */
     }
 
@@ -409,7 +409,7 @@ header {
 /* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
 @media (max-width: 768px) and (min-width: 480px) {
     .intros-section {
-        height: 50vh;  /* Adjust height for desktop site view on mobile */
+        height: 40vh;  /* Adjust height for desktop site view on mobile */
         background-position: center center; /* Keep background centered */
     }
 
