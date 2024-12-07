@@ -236,7 +236,6 @@ header {
 }
 
 
-
 /* Home Section */
 .home-section {
     background-image: 
@@ -244,7 +243,7 @@ header {
         url(Images/nbk.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;  /* This will keep the image cover the container */
+    background-size: cover;  /* Ensures background image covers the whole container */
     width: 100%;
     height: 100vh;  /* Full viewport height */
     display: flex;
@@ -257,8 +256,12 @@ header {
 /* For devices with screen width <= 1024px (tablets, smaller screens) */
 @media (max-width: 1024px) {
     .home-section {
-        height: 80vh; /* Adjust the background size to fit better on tablet screens */
-        background-position: center; /* Keep it centered */
+        height: 80vh; /* Adjust background size for tablet screens */
+        background-position: center; /* Keep the background image centered */
+    }
+
+    .home-content h3 {
+        font-size: 1.6rem;  /* Adjust text size for smaller screens */
     }
 }
 
@@ -266,23 +269,55 @@ header {
 @media (max-width: 768px) {
     .home-section {
         height: 60vh;  /* Adjust background size to fit better on mobile screens */
-        background-position: top center; /* Focus the top part of the image */
+        background-position: top center; /* Focus on the top part of the image */
+    }
+
+    .home-content h3 {
+        font-size: 1.4rem;  /* Reduce text size further */
     }
 }
 
-/* For even smaller screens (<= 480px) */
+/* For very small screens (<= 480px) */
 @media (max-width: 480px) {
     .home-section {
         height: 50vh;  /* Adjust background size to fit even better on very small screens */
-        background-position: top center; /* Focus the top part of the image */
+        background-position: top center; /* Focus on the top of the image */
+    }
+
+    .home-content h3 {
+        font-size: 1.2rem;  /* Further reduce text size */
     }
 }
 
-/* Home Content */
+/* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
+@media (max-width: 768px) and (min-width: 480px) {
+    .home-section {
+        height: 70vh;  /* Adjust height for desktop site view on mobile */
+        background-position: center center; /* Keep background centered */
+    }
+
+    .home-content h3 {
+        font-size: 1.5rem; /* Adjust font size for desktop view on mobile */
+    }
+}
+
+/* Adjust for actual desktop view on desktop (>= 1024px) */
+@media (min-width: 1024px) {
+    .home-section {
+        height: 100vh; /* Keep full height for large screens */
+    }
+
+    .home-content h3 {
+        font-size: 2rem; /* Standard text size for large screens */
+    }
+}
+
+/* Home Content Styling */
 .home-content {
     color: #FFF;
 }
 
+/* Home Links */
 .home-links .explore-link {
     font-size: clamp(1rem, 5vw, 1.5rem);
     background-color: #000000;
@@ -299,6 +334,7 @@ header {
     color: #000000;
     font-family: Verdana;
 }
+
 
 /* Intro Section */
 .intros-section {
