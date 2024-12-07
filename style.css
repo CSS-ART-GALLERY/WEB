@@ -31,13 +31,12 @@ body {
 /* Info Section */
 .infos {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space between the title and the icons */
+    align-items: center; /* Vertically center the items */
     padding: 15px 50px;
     background: #000;
     border-bottom: 1px solid #333;
     position: relative;
-    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .infos-left {
@@ -56,8 +55,7 @@ body {
 .infos-right {
     display: flex;
     align-items: center; /* Vertically align the icons */
-    gap: 20px;
-    justify-content: flex-end; /* Align to the right side */
+    gap: 20px; /* Space between the icons */
 }
 
 /* Social icons styling */
@@ -126,19 +124,19 @@ header {
     }
 
     .infos {
-        flex-direction: row; /* Ensure it stays in a row */
+        flex-direction: row; /* Keep items in one row */
         padding: 15px;
         flex-wrap: nowrap; /* Prevent wrapping */
     }
 
     .infos-left {
-        margin-bottom: 0; /* Ensure there's no space below the left side content */
-        flex: 1; /* Ensure it takes available space */
+        margin-bottom: 0; /* Ensure no space below the left side content */
+        flex: 1; /* Take up available space */
     }
 
     .infos-right {
-        flex: 1; /* Ensure it takes available space */
-        justify-content: flex-end; /* Align the icons to the right */
+        flex: 1; /* Take up available space */
+        justify-content: flex-end; /* Align icons to the right */
     }
 
     .gallery-title {
@@ -176,16 +174,15 @@ header {
 
     .infos {
         padding: 10px;
-        flex-direction: row; /* Keep elements on the same row */
+        flex-direction: row; /* Keep items in the same row */
         text-align: left; /* Align text left for readability */
         flex-wrap: nowrap; /* Prevent wrapping */
     }
 
     .infos-left,
     .infos-right {
-        width: 50%; /* Make both sections take 50% of the space */
         gap: 10px;
-        text-align: left; /* Align text left */
+        width: auto; /* Make both sections flexible */
     }
 
     .gallery-title {
