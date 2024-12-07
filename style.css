@@ -297,7 +297,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;  /* Keep the image covering the container */
-    width: 100%;
+    width   : 100%;
     height: 100vh;  /* Full height of the viewport */
     display: flex;
     justify-content: center;
@@ -328,19 +328,20 @@ header {
 }
 
 /* Text Container */
+/* Text Container */
 .text-container {
     text-align: left;
     color: #FFF;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 50%;  /* Make text container take 50% of the section */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;  /* Make text container the same height as the image */
+    width: 50%;  /* Text container takes 50% of the section */
+    height: 100%;  /* Ensure text container is the same height as the image */
+    max-width: 600px;  /* Limit text width for large screens */
+    box-sizing: border-box;  /* Make sure padding doesn’t break layout */
 }
 
+/* Text Heading Styling */
 .text-container h3 {
     font-size: 1.5rem;
     color: #ffffff;
