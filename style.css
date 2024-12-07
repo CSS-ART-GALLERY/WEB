@@ -324,7 +324,7 @@ header {
 /* For devices with screen width <= 1024px (tablets, smaller screens) */
 @media (max-width: 1024px) {
     .intros-section {
-        height: 80vh;  /* Adjust background height for tablets */
+        height: 70vh;  /* Adjust background height for tablets */
         background-position: top center; /* Focus on the top part of the image */
     }
 
@@ -337,7 +337,7 @@ header {
 /* For smaller screens (<= 768px) */
 @media (max-width: 768px) {
     .intros-section {
-        height: 70vh;  /* Adjust background height for mobile */
+        height: 60vh;  /* Adjust background height for mobile */
         background-position: top center; /* Focus on the top of the background image */
     }
 
@@ -350,13 +350,26 @@ header {
 /* For very small screens (<= 480px) */
 @media (max-width: 480px) {
     .intros-section {
-        height: 60vh;  /* Further reduce height for very small screens */
+        height: 50vh;  /* Further reduce height for very small screens */
         background-position: top center; /* Focus on the top part */
     }
 
     .text-container h3 {
         font-size: 1.2rem;  /* Smaller font size */
         padding: 0 10px;
+    }
+}
+
+/* For desktop emulation on mobile devices (CP using desktop view mode) */
+@media (max-width: 768px) and (min-width: 480px) {
+    .intros-section {
+        height: 75vh;  /* Slightly reduced height for desktop view mode on mobile */
+        background-position: center center; /* Keep background centered */
+    }
+
+    .text-container h3 {
+        font-size: 1.5rem; /* Adjust font size for the desktop view on mobile */
+        padding: 0 20px; /* Add padding for readability */
     }
 }
 
