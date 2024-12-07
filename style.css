@@ -265,60 +265,59 @@ header {
     background-color: #fff;
     color: #000000;
     font-family: Verdana;
-
 }
 
+/* Intro Section */
 .intros-section {
     background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Gradient from top to bottom */
-        url(Images/backg.png); /* Replace with your image */
-        border-image: fill 0 linear-gradient(#0001, #000);    
-
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
+        url(Images/backg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-between; /* Ensure text and image are spaced apart */
-    align-items: center; /* Align both text and image vertically in the center */
-    padding: 0; /* Ensure no additional padding */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
 }
 
 .intros-content {
     display: flex;
-    justify-content: flex-end; /* Align content to the right */
-    align-items: center; /* Vertically center the content */
+    justify-content: flex-end;
+    align-items: center;
     width: 100%;
 }
+
+/* Flexbox layout for text and image */
 .container {
-    display: flex; /* Flexbox layout */
-    flex-direction: row; /* Text on the left, image on the right */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    gap: 20px; /* Add space between text and image */
-    padding: 40px; /* Add padding around the container */
-    max-width: 1200px; /* Limit the maximum width of the container */
-    margin: 0 auto; /* Center the container on the page */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Text container styling */
 .text-container {
-    text-align: center; /* Align text to the left */
+    text-align: left; /* Align text to the left */
     color: #FFF;
     padding: 20px;
-    border-radius: 10px; /* Rounded corners for a cleaner look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-    max-width: 45%; /* Restrict text width */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 45%;
 }
 
 .text-container h3 {
     font-size: 1.5rem;
     color: #ffffff; 
-    font-family: 'Georgia', serif; 
-    line-height: 1.8; /* Improve readability */
-    margin: 0; /* Remove default margin */
-    text-align: center;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    margin: 0;
 }
 
 /* Image container styling */
@@ -327,32 +326,77 @@ header {
     justify-content: center;
     align-items: center;
     max-width: 80%;
-    transition: transform 0.3s ease-in-out; /* Add hover interaction */
+    transition: transform 0.3s ease-in-out;
 }
 
 .image-container img {
     height: 500px;
-    width: 100%; /* Make the image responsive */
-    border-radius: 10px; /* Rounded corners for a smoother look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
-    transition: transform 0.3s ease; /* Smooth zoom effect */
+    transition: transform 0.3s ease;
 }
 
 .image-container:hover img {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
-/* Responsive design for smaller screens */
+/* Responsive design for smaller screens (max-width 768px) */
 @media (max-width: 768px) {
+    /* Stack text and image vertically */
     .container {
-        flex-direction: column; /* Stack text and image vertically */
+        flex-direction: column;
         gap: 20px; /* Add space between stacked elements */
     }
+    
     .text-container, .image-container {
-        max-width: 90%; /* Expand to fit smaller screens */
+        max-width: 90%; /* Ensure they fit the screen */
+    }
+    
+    .text-container h3 {
+        font-size: 1.2rem; /* Adjust text size for smaller screens */
+        text-align: center; /* Center text on small screens */
+    }
+
+    .home-section {
+        padding-bottom: 60px; /* Reduce bottom padding */
+    }
+    
+    /* Adjust explore link for smaller screens */
+    .home-links .explore-link {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    /* Adjust image size */
+    .image-container img {
+        height: 300px; /* Reduce height for mobile */
     }
 }
+
+/* For very small screens (max-width 480px) */
+@media (max-width: 480px) {
+    .text-container h3 {
+        font-size: 1rem; /* Further reduce text size */
+        padding: 15px; /* Add padding for better readability */
+    }
+
+    .home-links .explore-link {
+        font-size: 1rem; /* Adjust explore link font size */
+        padding: 8px 12px; /* Smaller padding for mobile */
+    }
+
+    /* Further reduce image height */
+    .image-container img {
+        height: 250px;
+    }
+
+    .home-section {
+        padding-bottom: 40px; /* More padding for mobile */
+    }
+}
+
 
 /* Highlights Section */
 .highlights {
