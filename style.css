@@ -250,19 +250,13 @@ header {
         background-size: cover; /* Ensure the image still covers, but scales better */
         height: 60vh;  /* Reduce background height on tablets */
     }
-
-    /* Adjust explore link */
-    .home-links .explore-link {
-        font-size: 1.2rem;
-        padding: 12px 20px;
-    }
 }
 
 /* For smaller screens (max-width: 480px) */
 @media (max-width: 480px) {
     .home-section {
         background-size: cover; /* Keep it responsive */
-        height: 50vh;  /* Reduce the background image height even further for mobile */
+        height: 40vh;  /* Further reduce the background image height for mobile */
         background-position: top center; /* Adjust the background position to the top */
     }
 
