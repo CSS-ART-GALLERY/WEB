@@ -335,6 +335,10 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 50%;  /* Make text container take 50% of the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* Make text container the same height as the image */
 }
 
 .text-container h3 {
@@ -343,6 +347,7 @@ header {
     font-family: 'Georgia', serif;
     line-height: 1.8;
     margin: 0;
+    text-align: left;
 }
 
 /* Image Container */
@@ -352,6 +357,7 @@ header {
     align-items: center;
     width: 50%;  /* Make image container take 50% of the section */
     transition: transform 0.3s ease-in-out;
+    height: 100%;  /* Make image container the same height as the text */
 }
 
 .image-container img {
@@ -383,6 +389,7 @@ header {
 
     .text-container, .image-container {
         width: 48%;  /* Adjust width to 48% for better fit */
+        height: 100%;  /* Make sure text and image are the same height */
     }
 
     .text-container h3 {
@@ -409,6 +416,7 @@ header {
 
     .text-container, .image-container {
         width: 45%;  /* Reduce width for better fit on mobile */
+        height: 100%;  /* Make sure text and image are the same height */
     }
 
     .text-container h3 {
@@ -442,6 +450,7 @@ header {
         max-height: 200px;  /* Further reduce image height */
     }
 }
+
 
 
 /* Highlights Section */
