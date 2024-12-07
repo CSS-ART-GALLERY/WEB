@@ -324,7 +324,7 @@ header {
 /* For devices with screen width <= 1024px (tablets, smaller screens) */
 @media (max-width: 1024px) {
     .intros-section {
-        height: 70vh;  /* Adjust background height for tablets */
+        height: 50vh;  /* Adjust background height for tablets */
         background-position: top center; /* Focus on the top part of the image */
     }
 
@@ -376,7 +376,7 @@ header {
 /* Adjust for actual desktop view on desktop (>= 1024px) */
 @media (min-width: 1024px) {
     .intros-section {
-        height: 100vh; /* Ensure the background height is correct for large screens */
+        height: 120vh; /* Ensure the background height is correct for large screens */
     }
 
     .text-container h3 {
