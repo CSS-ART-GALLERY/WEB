@@ -256,7 +256,7 @@ header {
 /* For devices with screen width <= 1024px (tablets, smaller screens) */
 @media (max-width: 1024px) {
     .home-section {
-        height: 80vh; /* Adjust background size for tablet screens */
+        height: 50vh; /* Adjust background size for tablet screens */
         background-position: center; /* Keep the background image centered */
     }
 
@@ -292,7 +292,7 @@ header {
 /* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
 @media (max-width: 768px) and (min-width: 480px) {
     .home-section {
-        height: 70vh;  /* Adjust height for desktop site view on mobile */
+        height: 50vh;  /* Adjust height for desktop site view on mobile */
         background-position: center center; /* Keep background centered */
     }
 
