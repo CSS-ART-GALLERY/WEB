@@ -32,7 +32,7 @@ body {
 .infos {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Vertically align items */
     padding: 15px 50px;
     background: #000;
     border-bottom: 1px solid #333;
@@ -41,7 +41,8 @@ body {
 
 .infos-left {
     display: flex;
-    gap: 20px;
+    align-items: center; /* Vertically align the text */
+    gap: 20px; /* Space between the title and the icons */
     flex: 1; /* Take available space */
 }
 
@@ -54,10 +55,9 @@ body {
 
 .infos-right {
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertically align the icons */
     gap: 20px;
     justify-content: flex-end; /* Align to the right side */
-    flex: 1; /* Take available space */
 }
 
 .infos-right .social a,
