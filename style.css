@@ -67,7 +67,7 @@ body {
 }
 
 .infos-right .social a:hover {
-    color: #490CCC; /* Change color on hover */
+    color: #7332ff; /* Change color on hover */
 }
 
 .infos-right .social i {
@@ -76,7 +76,7 @@ body {
 
 /* Envelope icon link */
 .infos-right .email-link {
-    background: #490CCC;
+    background: #621df7;
     border: 1px solid #490CCC;
     padding: 3px 10px;
     border-radius: 5px;
@@ -523,14 +523,13 @@ header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow around the image */
 }
 
-/* Info Section */
 .info {
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     flex-direction: column; /* Stack the title and link vertically */
     padding: 15px 50px;
-    background: #000;
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
     border-bottom: 1px solid #333;
     position: absolute;
     bottom: 0; /* Position it at the bottom of the card */
@@ -538,8 +537,7 @@ header {
     right: 0;
     text-align: center;
     opacity: 0; /* Hide the info section initially */
-    transition: opacity 0.3s ease;
-    border-radius: 0 0 10px 10px; /* Rounded corners for the bottom of the info section */
+    transition: opacity 0.2s ease; /* Smooth transition for opacity */
 }
 
 /* Show the info section when hovered (desktop) */
