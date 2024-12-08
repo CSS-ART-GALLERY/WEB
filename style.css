@@ -13,8 +13,8 @@ body {
 /* Intro Section */
 .intro {
     text-align: center;
-    padding: 20px;
-    color: #000000;
+    padding: 10px;
+    color: #07040f;
 }
 .intro h1 {
     font-size: 2rem;
@@ -33,7 +33,7 @@ body {
     display: flex;
     justify-content: space-between; /* Space between the title and the icons */
     align-items: center; /* Vertically center the items */
-    padding: 15px 50px;
+    padding: 15px 40px;
     background: #000;
     border-bottom: 1px solid #333;
     position: relative;
@@ -42,7 +42,7 @@ body {
 .infos-left {
     display: flex;
     align-items: center; /* Vertically align the title */
-    gap: 20px; /* Space between the title and the icons */
+    gap: 15px; /* Space between the title and the icons */
 }
 
 .gallery-title {
@@ -59,23 +59,42 @@ body {
 }
 
 /* Social icons styling */
-.infos-right .social a,
-.infos-right .infos-link a {
+.infos-right .social a {
     color: #FFF;
     text-decoration: none;
     transition: color 0.4s ease-in-out;
+    font-size: 1.5rem; /* Adjust icon size */
 }
 
-.infos-right .infos-link a {
+.infos-right .social a:hover {
+    color: #490CCC; /* Change color on hover */
+}
+
+.infos-right .social i {
+    margin-right: 0px; /* Add space between icon and text */
+}
+
+/* Envelope icon link */
+.infos-right .email-link {
     background: #490CCC;
     border: 1px solid #490CCC;
-    padding: 7px 12px;
+    padding: 3px 10px;
     border-radius: 5px;
+    color: #FFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-.infos-right .infos-link a:hover {
+.infos-right .email-link:hover {
     background: transparent;
     border-color: #FFF;
+    color: #FFF; /* Ensure text color is maintained on hover */
+}
+
+.infos-right .email-link i {
+    margin-right: 3px; /* Space between icon and text */
 }
 
 /* Header & Navbar */
@@ -92,18 +111,23 @@ header {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    font-size: 0.5rem;
+
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 30px; /* Space between the links */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.5rem;
+
 }
 
 .nav-links a {
     color: #FFF;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
