@@ -613,7 +613,6 @@ header {
     }
 }
 
-
 /* Modal Styling */
 .modal {
     display: none;
@@ -625,9 +624,9 @@ header {
     background-color: rgba(0, 0, 0, 0.8); /* Darkened background */
     z-index: 1000;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top to make room for the close button */
     padding: 20px;
-    overflow: hidden; /* Prevent overflow issues */
+    overflow: auto; /* Allow the modal to scroll if the content is too tall */
 }
 
 /* Show the modal when targeted */
@@ -640,37 +639,38 @@ header {
 .modal-content {
     background: #f8f5f5;
     color: #000000;
-    padding: 40px; /* Padding adjusted */
+    padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 1000px;
-    height: 90%;
-    overflow: auto;
+    width: 100%;
+    max-width: 800px; /* Adjusted for better scaling */
+    height: auto;
+    overflow: auto; /* Make modal content scrollable */
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center content */
+    justify-content: flex-start; /* Keep content aligned to the top */
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
 }
 
 /* Image Styling Inside Modal */
 .modal-content img {
-    max-width: 90vh; /* Image can grow to the width of the modal */
-    height: auto; /* Maintain the image's aspect ratio */
-    object-fit: contain; /* Ensure the image fits properly inside the container */
+    width: 675px; /* Set a fixed width of 675px */
+    height: 350px; /* Set a fixed height of 390px */
+    object-fit: cover; /* Ensure the image fits within the defined dimensions, cropping if necessary */
     margin-top: 20px;
     margin-bottom: 20px;
-    max-height: 40vh; /* Limit the image height to 60% of the viewport height */
     border-radius: 10px;
-    display: block; /* Ensures image takes up block space */
-    align-self: center; /* Center image horizontally */
+    display: block;
+    align-self: center;
 }
 
 /* Heading and Text Inside Modal */
 .modal-content h2 {
     font-size: 2rem;
     font-family: 'Georgia', serif;
+    margin: 20px 0;
 }
 
 .modal-content p {
@@ -690,6 +690,7 @@ header {
     text-decoration: none;
     font-size: 2.5rem;
     font-weight: bold;
+    z-index: 1001; /* Ensure close button is above the modal content */
 }
 
 /* Location Styling */
@@ -702,7 +703,8 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-right: 10px;
+    padding: 10px;
+    margin: 20px 0;
 }
 
 /* Styling for the location link */
@@ -733,30 +735,55 @@ header {
 
 /* Mobile responsive design */
 @media (max-width: 768px) {
+    .modal-content {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .modal-content img {
+        width: 100%; /* Use full width for smaller screens */
+        height: auto; /* Allow height to adjust automatically */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+    }
+
     .location {
-        padding: 20px;
-        max-width: 90%;
+        max-width: 100%;
+        padding: 10px;
     }
 
     .location a {
         font-size: 1rem;
-        padding: 10px;
     }
 }
 
-/* Contact Section Styling */
-.contact-content {
-    background-color: #7c7a7a;
-    border-image: fill 0 linear-gradient(rgba(80, 79, 79, 0.067), #0e0d0d);
-    width: 100%;
-    height: 55vh; /* Adjusted to provide more space for text and icon */
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Vertically center content */
-    align-items: center; /* Horizontally center content */
-    position: relative;
-    padding: 20px;
+/* Larger screens (Desktop or Tablets) */
+@media (min-width: 769px) {
+    .modal-content {
+        padding: 30px;
+        max-width: 1000px;
+    }
+
+    .modal-content img {
+        width: 675px; /* Fixed width for larger screens */
+        height: 390px; /* Fixed height for larger screens */
+    }
+
+    .modal-content h2 {
+        font-size: 2rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
 }
+
 
 /* Footer */
 footer {
