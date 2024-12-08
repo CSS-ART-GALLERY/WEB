@@ -809,7 +809,6 @@ header {
     max-width: 675px; /* Max width for the box */
     margin: auto;
     overflow: hidden;
-    border-radius: 8px;
 }
 
 /* Slider Styling */
@@ -874,7 +873,7 @@ header {
 .nav-radio:checked:nth-of-type(1) ~ .dots .dot:nth-of-type(1),
 .nav-radio:checked:nth-of-type(2) ~ .dots .dot:nth-of-type(2),
 .nav-radio:checked:nth-of-type(3) ~ .dots .dot:nth-of-type(3) {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(56, 54, 54);
 }
 
 /* Automatic Sliding */
