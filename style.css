@@ -678,8 +678,8 @@ header {
 
 /* Image Styling Inside Modal */
 .modal-content img {
-    width: 675px; /* Set a fixed width of 675px */
-    height: 350px; /* Set a fixed height of 390px */
+    width: 100%; /* Ensure image takes the full width of the modal */
+    height: 390px; /* Fixed height for consistent image sizing */
     object-fit: cover; /* Ensure the image fits within the defined dimensions, cropping if necessary */
     margin-top: 20px;
     margin-bottom: 20px;
@@ -687,7 +687,6 @@ header {
     display: block;
     align-self: center;
 }
-
 /* Heading and Text Inside Modal */
 .modal-content h2 {
     font-size: 2rem;
@@ -702,7 +701,6 @@ header {
     line-height: 1.6;
     margin-bottom: 20px;
 }
-
 /* Close button for the modal */
 .close-btn {
     position: absolute;
@@ -714,7 +712,6 @@ header {
     font-weight: bold;
     z-index: 1001; /* Ensure close button is above the modal content */
 }
-
 /* Location Styling */
 .location {
     background-color: #f5f5f5;
@@ -805,8 +802,101 @@ header {
         font-size: 1rem;
     }
 }
+/* Box Styling for the Slider */
+.box {
+    position: relative;
+    width: 100%;
+    max-width: 675px; /* Max width for the box */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
 
+/* Slider Styling */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+    width: 300%; /* Ensure the entire width accommodates all 3 images */
+    position: relative;
+}
 
+/* Individual image inside the slider */
+.slider img {
+    width: 33.33%; /* Each image takes up one-third of the container width */
+    height: 390px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image fits inside the container without distortion */
+    display: block;
+}
+
+/* Clone the first image and add it to the end of the slider */
+.slider .clone {
+    position: absolute;
+    left: 100%;
+}
+
+/* Hide radio buttons */
+.nav-radio {
+    display: none;
+}
+
+/* Dots for slider navigation */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+/* Style for individual dot indicators */
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* When radio buttons are checked, change the dot color */
+.nav-radio:checked:nth-of-type(1) ~ .slider {
+    transform: translateX(0); /* Show first image */
+}
+.nav-radio:checked:nth-of-type(2) ~ .slider {
+    transform: translateX(-33.33%); /* Show second image */
+}
+.nav-radio:checked:nth-of-type(3) ~ .slider {
+    transform: translateX(-66.66%); /* Show third image */
+}
+
+/* Dots active when corresponding radio is checked */
+.nav-radio:checked:nth-of-type(1) ~ .dots .dot:nth-of-type(1),
+.nav-radio:checked:nth-of-type(2) ~ .dots .dot:nth-of-type(2),
+.nav-radio:checked:nth-of-type(3) ~ .dots .dot:nth-of-type(3) {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Automatic Sliding */
+.slider {
+    animation: slide 10s infinite linear; /* Infinite sliding effect */
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33.33% {
+        transform: translateX(-33.33%);
+    }
+    66.66% {
+        transform: translateX(-66.66%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 /* Footer */
 footer {
     text-align: center;
