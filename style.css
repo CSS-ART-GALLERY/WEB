@@ -8,32 +8,32 @@ body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     color: #FFF;
+    padding: 0;
 }
-
 /* Intro Section */
 .intro {
     text-align: center;
-    padding: 20px;
-    color: #000000;
+    padding: 10px;
+    color: #07040f;
 }
 .intro h1 {
     font-size: 2rem;
     margin-bottom: 10px;
-     font-family: 'Georgia', serif; /* Classic serif font for historical feel */
+    font-family: 'Georgia', serif; /* Classic serif font for historical feel */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Slight shadow to enhance readability */
 }
 .intro p {
     font-size: 1rem;
-    font-family: 'Georgia', serif; 
+    font-family: 'Georgia', serif;
     color: #3f3333;
 }
 
 /* Info Section */
 .infos {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
+    justify-content: space-between; /* Space between the title and the icons */
+    align-items: center; /* Vertically center the items */
+    padding: 15px 40px;
     background: #000;
     border-bottom: 1px solid #333;
     position: relative;
@@ -41,7 +41,8 @@ body {
 
 .infos-left {
     display: flex;
-    gap: 20px;
+    align-items: center; /* Vertically align the title */
+    gap: 15px; /* Space between the title and the icons */
 }
 
 .gallery-title {
@@ -53,27 +54,47 @@ body {
 
 .infos-right {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    align-items: center; /* Vertically align the icons */
+    gap: 20px; /* Space between the icons */
 }
 
-.infos-right .social a,
-.infos-right .infos-link a {
+/* Social icons styling */
+.infos-right .social a {
     color: #FFF;
     text-decoration: none;
     transition: color 0.4s ease-in-out;
+    font-size: 1.5rem; /* Adjust icon size */
 }
 
-.infos-right .infos-link a {
-    background: #490CCC;
+.infos-right .social a:hover {
+    color: #7332ff; /* Change color on hover */
+}
+
+.infos-right .social i {
+    margin-right: 0px; /* Add space between icon and text */
+}
+
+/* Envelope icon link */
+.infos-right .email-link {
+    background: #621df7;
     border: 1px solid #490CCC;
-    padding: 7px 12px;
+    padding: 3px 10px;
     border-radius: 5px;
+    color: #FFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-.infos-right .infos-link a:hover {
+.infos-right .email-link:hover {
     background: transparent;
     border-color: #FFF;
+    color: #FFF; /* Ensure text color is maintained on hover */
+}
+
+.infos-right .email-link i {
+    margin-right: 3px; /* Space between icon and text */
 }
 
 /* Header & Navbar */
@@ -88,19 +109,25 @@ header {
 
 .navigation {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 0.5rem;
+
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 30px; /* Space between the links */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.5rem;
+
 }
 
 .nav-links a {
     color: #FFF;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -109,6 +136,132 @@ header {
     color: #848386;
 }
 
+/* Responsive Styles */
+
+/* For devices smaller than 768px (tablets) */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 1.5rem; /* Smaller heading */
+    }
+    .intro p {
+        font-size: 1rem; /* Slightly smaller text */
+    }
+
+    .infos {
+        flex-direction: row; /* Keep items in one row */
+        padding: 15px;
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .infos-left {
+        margin-bottom: 0; /* Ensure no space below the left side content */
+        flex: 1; /* Take up available space */
+    }
+
+    .infos-right {
+        flex: 1; /* Take up available space */
+        justify-content: flex-end; /* Align icons to the right */
+    }
+
+    .gallery-title {
+        font-size: 1.5rem; /* Adjust gallery title size */
+    }
+
+    /* Keep navbar links horizontal */
+    .navigation {
+        flex-direction: row; /* Keep the navigation in a row */
+        justify-content: center; /* Center the navigation items horizontally */
+    }
+
+    .nav-links {
+        flex-direction: row; /* Keep nav items horizontal */
+        gap: 20px; /* Space between links */
+    }
+
+    .nav-links a {
+        font-size: 1.1rem; /* Slightly smaller font for better readability */
+    }
+}
+
+/* For devices smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem; /* Make the body font size smaller for mobile */
+    }
+
+    .intro h1 {
+        font-size: 1.3rem; /* Smaller heading */
+    }
+    .intro p {
+        font-size: 0.9rem; /* Adjust text size for small screens */
+    }
+
+    .infos {
+        padding: 10px;
+        flex-direction: row; /* Keep items in the same row */
+        text-align: left; /* Align text left for readability */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .infos-left,
+    .infos-right {
+        gap: 10px;
+        width: auto; /* Make both sections flexible */
+    }
+
+    .gallery-title {
+        font-size: 1.2rem; /* Smaller title for mobile */
+    }
+
+    .navigation {
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: row; /* Keep nav items horizontal */
+        gap: 15px;
+        width: 100%; /* Full width */
+        align-items: center;
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .infos-right {
+        margin-top: 10px; /* Give some spacing between social and email */
+    }
+
+    .infos-right .social a {
+        font-size: 1.2rem; /* Slightly larger icons for easier tapping */
+    }
+}
+
+/* Optional: For very large screens like desktop monitors */
+@media (min-width: 1200px) {
+    .intro h1 {
+        font-size: 2.5rem; /* Larger heading for desktop */
+    }
+    .intro p {
+        font-size: 1.2rem; /* Slightly larger text for readability */
+    }
+
+    .infos {
+        padding: 15px 100px; /* More padding for larger screens */
+    }
+
+    .nav-links {
+        gap: 50px; /* More space between navbar links */
+    }
+
+    .nav-links a {
+        font-size: 1.4rem; /* Larger font for large screens */
+    }
+}
+
+
+
 /* Home Section */
 .home-section {
     background-image: 
@@ -116,86 +269,198 @@ header {
         url(Images/nbk.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  /* Ensures background image covers the container */
     width: 100%;
-    height: 100vh;
+    height: 100vh;  /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: flex-end;
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 100px;  /* Bottom padding for better text alignment */
 }
 
+/* For devices with screen width <= 1024px (tablets, smaller screens) */
+@media (max-width: 1024px) {
+    .home-section {
+        height: 60vh; /* Adjust background size for tablet screens */
+        background-position: center; /* Keep the background centered */
+    }
+
+    .home-content h3 {
+        font-size: 1.6rem;  /* Adjust text size for smaller screens */
+    }
+}
+
+/* For smaller screens (<= 768px) */
+@media (max-width: 768px) {
+    .home-section {
+        height: 50vh;  /* Adjust background size to fit better on mobile screens */
+        background-position: top center; /* Focus on the top part of the image */
+        padding-bottom: 50px;  /* Adjust padding for smaller screens */
+    }
+
+    .home-content h3 {
+        font-size: 1.4rem;  /* Reduce text size further */
+    }
+}
+
+/* For very small screens (<= 480px) */
+@media (max-width: 480px) {
+    .home-section {
+        height: 50vh;  /* Adjust background size to fit even better on very small screens */
+        background-position: top center; /* Focus on the top of the image */
+        padding-bottom: 30px; /* Further adjust padding for very small screens */
+    }
+
+    .home-content h3 {
+        font-size: 1.2rem;  /* Further reduce text size */
+    }
+}
+
+/* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
+@media (max-width: 768px) and (min-width: 480px) {
+    .home-section {
+        height: 40vh;  /* Adjust height for desktop site view on mobile */
+        background-position: center center; /* Keep background centered */
+        padding-bottom: 20px; /* Adjust padding to ensure text is visible */
+    }
+
+    .home-content h3 {
+        font-size: 1.5rem; /* Adjust font size for desktop view on mobile */
+    }
+}
+
+/* Adjust for actual desktop view on desktop (>= 1024px) */
+@media (min-width: 1024px) {
+    .home-section {
+        height: 100vh; /* Full height for large screens */
+        padding-bottom: 100px; /* Keep enough bottom padding for content */
+    }
+
+    .home-content h3 {
+        font-size: 2rem; /* Standard text size for large screens */
+    }
+}
+
+/* Home Content Styling */
 .home-content {
     color: #FFF;
 }
 
+/* Home Links */
 .home-links .explore-link {
     font-size: clamp(1rem, 5vw, 1.5rem);
-    background-color: #201111;
+    background-color: #000000;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-family: Verdana;
 }
 
 .home-links .explore-link:hover {
     background-color: #fff;
     color: #000000;
+    font-family: Verdana;
 }
 
+
+/* Intro Section */
 .intros-section {
     background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Gradient from top to bottom */
-        url(Images/plaza.jpg); /* Replace with your image */
-    background-position: center;
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
+        url(Images/backg.png);
+    background-position: center center; /* Always center the background */
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  /* Ensures background image covers the whole area */
     width: 100%;
-    height: 100vh;
+    height: 100vh;  /* Full height of the viewport */
     display: flex;
-    justify-content: space-between; /* Ensure text and image are spaced apart */
-    align-items: center; /* Align both text and image vertically in the center */
-    padding: 0; /* Ensure no additional padding */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;  /* Center the text */
 }
 
-.intros-content {
-    display: flex;
-    justify-content: flex-end; /* Align content to the right */
-    align-items: center; /* Vertically center the content */
-    width: 100%;
+/* Adjust height for larger screens */
+@media (min-width: 1024px) {
+    .intros-section {
+        height: 100vh; /* Full viewport height for larger screens */
+        background-position: center center; /* Keep background centered */
+    }
+
+    .text-container h3 {
+        font-size: 2rem; /* Font size for large screens */
+        line-height: 1.6;
+    }
 }
 
-.text-container {
-    text-align: left; /* Align text to the left for better readability */
-    color: #FFF;
-    padding: 20px;
-    max-width: 45%; /* Slightly reduce text width for better balance */
-}
-.text-container h3 {
-    font-size: 1.5rem;
-    color: #ffffff; 
-    font-family: 'Georgia', serif; 
-    line-height: 1.6; /* Improve readability */
-}
+/* For devices with screen width <= 1024px (tablets, smaller screens) */
+@media (max-width: 1024px) {
+    .intros-section {
+        height: 50vh;  /* Adjust background height for tablets */
+        background-position: top center; /* Focus on the top part of the image */
+    }
 
-
-
-.applet-container {
-               
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(27, 27, 27);
-    padding: 10px;
-
+    .text-container h3 {
+        font-size: 1.6rem;
+        padding: 0 20px; /* Add some padding on smaller screens */
+    }
 }
 
-#map {
-    height: 60vh; /* Adjust this value based on your design */
-    width: 100vh; /* Full width for responsiveness */
-    border: 2px solid #000;
-    z-index: 1; /* Ensure it's behind the navbar */
+/* For smaller screens (<= 768px) */
+@media (max-width: 768px) {
+    .intros-section {
+        height: 60vh;  /* Adjust background height for mobile */
+        background-position: top center; /* Focus on the top of the background image */
+    }
+
+    .text-container h3 {
+        font-size: 1.4rem;  /* Smaller font for mobile */
+        padding: 0 15px;
+    }
 }
+
+/* For very small screens (<= 480px) */
+@media (max-width: 480px) {
+    .intros-section {
+        height: 50vh;  /* Further reduce height for very small screens */
+        background-position: top center; /* Focus on the top part */
+    }
+
+    .text-container h3 {
+        font-size: 1rem;  /* Smaller font size */
+        padding: 0 10px;
+    }
+}
+
+/* Adjust for Desktop View on Mobile (when using desktop emulation in CP) */
+@media (max-width: 768px) and (min-width: 480px) {
+    .intros-section {
+        height: 40vh;  /* Adjust height for desktop site view on mobile */
+        background-position: center center; /* Keep background centered */
+    }
+
+    .text-container h3 {
+        font-size: 1.5rem; /* Adjust font size for the desktop view on mobile */
+        padding: 0 20px; /* Add padding for readability */
+    }
+}
+
+/* Adjust for actual desktop view on desktop (>= 1024px) */
+@media (min-width: 1024px) {
+    .intros-section {
+        height: 120vh; /* Ensure the background height is correct for large screens */
+    }
+
+    .text-container h3 {
+        font-size: 2rem;
+    }
+}
+
+
 
 
 
@@ -218,11 +483,15 @@ header {
 }
 
 /* Card Container */
-.card-group{
+.card-group {
     gap: 1rem;
     padding: 20px;
-
+    display: flex;
+    flex-wrap: wrap; /* Ensure the cards wrap on smaller screens */
+    justify-content: space-between;
 }
+
+/* Individual Cards */
 .card {
     position: relative;
     width: 280px;
@@ -233,16 +502,17 @@ header {
     background: #313030;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 40px;
-    
+    border-radius: 15px; /* Rounded corners for cards */
+    margin-bottom: 1rem; /* Space between cards */
 }
 
-/* Card Hover */
+/* Hover Effect on Cards */
 .card:hover {
     transform: translateY(-10px); /* Lift the hovered card */
     box-shadow: 0 10px 20px rgba(243, 243, 245, 0.5); /* Slight glow effect */
 }
 
-/* Image Holder: Add a frame and gradient overlay */
+/* Image Holder */
 .card img {
     width: 100%;
     height: 100%;
@@ -253,53 +523,33 @@ header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow around the image */
 }
 
-/* Apply animation only when hovered */
-.card:hover img {
-    animation: zoomInOut 3s infinite alternate ease-in-out; /* Continuous zoom effect */
-}
-
-/* Keyframes for Zoom In and Out */
-@keyframes zoomInOut {
-    0% {
-        transform: scale(1); /* Original size */
-    }
-    50% {
-        transform: scale(1.1); /* Zoom in */
-    }
-    100% {
-        transform: scale(1); /* Zoom out to original size */
-    }
-}
-
-/* Info Section */
 .info {
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     flex-direction: column; /* Stack the title and link vertically */
     padding: 15px 50px;
-    background: #000;
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
     border-bottom: 1px solid #333;
-    position: relative;
-}
-
-/* Info Section (Position it below the image) */
-.card .info {
     position: absolute;
     bottom: 0; /* Position it at the bottom of the card */
     left: 0;
     right: 0;
     text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #FFF;
-    transition: opacity 0.5s ease;
-    opacity: 0; /* Initially hide the info section */
+    opacity: 0; /* Hide the info section initially */
+    transition: opacity 0.2s ease; /* Smooth transition for opacity */
 }
 
-/* Show the info section when hovered */
+/* Show the info section when hovered (desktop) */
 .card:hover .info {
-    opacity: 1; /* Make info visible */
+    opacity: 1; /* Make info visible on hover */
+}
+
+/* Info Section Heading */
+.info h5 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #FFF;
 }
 
 /* Explore Button */
@@ -311,12 +561,13 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
 }
 
 /* Button Hover Effect */
 .card .info a:hover {
     background: linear-gradient(145deg, #222121, #cecfd3); /* Reverse gradient on hover */
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
     transform: translateY(-4px); /* Slightly lift the button on hover */
     letter-spacing: 2px; /* Increase letter spacing */
@@ -328,59 +579,62 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow on click */
 }
 
-/* Card Group Blur Effect */
-.card-group:hover > .card:not(:hover) {
-    transform: translateY(0); /* Ensure no shift effect for non-hovered cards */
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-
-
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    font-size: 0.9rem;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .info {
-        flex-direction: column;
-        gap: 15px;
+    /* Adjust Info Section for Mobile */
+    .card .info {
+        position: absolute; /* Keep info positioned at the bottom of the card */
+        opacity: 0; /* Hide the info initially */
+        padding: 15px;
+        text-align: center;
+        border-radius: 0 0 10px 10px; /* Rounded corners */
+        margin-top: 10px; /* Space from image */
+        bottom: 0; /* Position it at the bottom */
     }
 
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .card-group {
-        gap: 1rem;
-        border-radius: 50px;
-
+    /* Show the info section only on click (mobile) */
+    .card:active .info, .card:focus-within .info {
+        opacity: 1; /* Show info when card is active (clicked/tapped) */
     }
 
     .card {
-        width: 90%;
-        max-width: 320px;
-        padding: 40px;
+        width: 100%; /* Make cards smaller and fit well on mobile */
+        max-width: 90%;
+        padding: 15px; /* Reduce padding on mobile */
+        margin: 10px auto; /* Center the card */
     }
 
-    .card h1 {
-        font-size: 1.3rem;
+    .card img {
+        height: 200px; /* Reduce image size on mobile */
+        width: 100%; /* Ensure image fits well */
     }
 
-    .card p {
-        font-size: 0.8rem;
+    .card .info a {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust button padding */
     }
 
-    .card button {
-        font-size: 0.8rem;
+    /* Adjust Card Group Layout on Small Screens */
+    .card-group {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 1rem; /* Add space between cards */
+        padding: 10px; /* Add padding for spacing */
     }
 }
+
+/* Further Responsiveness for Very Small Screens */
+@media (max-width: 480px) {
+    /* Ensure cards are stacked in one column */
+    .card-group {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .card {
+        width: 100%; /* Ensure full-width cards on mobile */
+    }
+}
+
 /* Modal Styling */
 .modal {
     display: none;
@@ -389,70 +643,64 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Darkened background */
     z-index: 1000;
     justify-content: center;
-    align-items: center;
-    padding: 40px;
+    align-items: flex-start; /* Align items to the top to make room for the close button */
+    padding: 20px;
+    overflow: auto; /* Allow the modal to scroll if the content is too tall */
 }
 
 /* Show the modal when targeted */
 .modal:target {
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Modal Content Styling */
 .modal-content {
     background: #f8f5f5;
     color: #000000;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    width: 80%;
-    max-width: 700px;
-    height: 80%;
-    overflow-y: auto;
+    width: 100%;
+    max-width: 800px; /* Adjusted for better scaling */
+    height: auto;
+    overflow: auto; /* Make modal content scrollable */
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Keep content aligned to the top */
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
 }
 
-/* Space before and after image inside modal content */
+/* Image Styling Inside Modal */
 .modal-content img {
-    margin-top: 20px;  /* Space above the image */
-    margin-bottom: 20px; /* Space below the image */
-    width: auto;
-    height: 350;
-    object-fit: cover;
+    width: 100%; /* Ensure image takes the full width of the modal */
+    height: 390px; /* Fixed height for consistent image sizing */
+    object-fit: cover; /* Ensure the image fits within the defined dimensions, cropping if necessary */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: block;
+    align-self: center;
 }
-
 /* Heading and Text Inside Modal */
 .modal-content h2 {
     font-size: 2rem;
     font-family: 'Georgia', serif;
-    margin-top: 20px;  /* Space before the heading */
+    margin: 20px 0;
 }
 
 .modal-content p {
     font-size: 1rem;
-    font-family: 'Times New Roman', serif;
-    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
     line-height: 1.6;
-    margin-bottom: 20px; /* Space after text */
+    margin-bottom: 20px;
 }
-
-/* Image directly inside .modal (optional, if used) */
-.modal img {
-    width: 100%;
-    max-width: 300px; /* Set the max width of the image */
-    height: auto;
-    border-radius: 5px;
-    margin-top: 20px;  /* Space before the image */
-    margin-bottom: 20px; /* Space after the image */
-    object-fit: cover;
-}
-
 /* Close button for the modal */
 .close-btn {
     position: absolute;
@@ -462,4 +710,198 @@ footer {
     text-decoration: none;
     font-size: 2.5rem;
     font-weight: bold;
+    z-index: 1001; /* Ensure close button is above the modal content */
+}
+/* Location Styling */
+.location {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Styling for the location link */
+.location a {
+    font-size: 1.2rem;
+    color: #4e4e4e;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hover effect for the link */
+.location a:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Icon inside the link */
+.location a img {
+    width: 40px;
+    height: 20px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .modal-content img {
+        width: 100%; /* Use full width for smaller screens */
+        height: auto; /* Allow height to adjust automatically */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+    }
+
+    .location {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .location a {
+        font-size: 1rem;
+    }
+}
+
+/* Larger screens (Desktop or Tablets) */
+@media (min-width: 769px) {
+    .modal-content {
+        padding: 30px;
+        max-width: 1000px;
+    }
+
+    .modal-content img {
+        width: 675px; /* Fixed width for larger screens */
+        height: 390px; /* Fixed height for larger screens */
+    }
+
+    .modal-content h2 {
+        font-size: 2rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+}
+/* Box Styling for the Slider */
+.box {
+    position: relative;
+    width: 100%;
+    max-width: 675px; /* Max width for the box */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Slider Styling */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+    width: 300%; /* Ensure the entire width accommodates all 3 images */
+    position: relative;
+}
+
+/* Individual image inside the slider */
+.slider img {
+    width: 33.33%; /* Each image takes up one-third of the container width */
+    height: 390px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image fits inside the container without distortion */
+    display: block;
+}
+
+/* Clone the first image and add it to the end of the slider */
+.slider .clone {
+    position: absolute;
+    left: 100%;
+}
+
+/* Hide radio buttons */
+.nav-radio {
+    display: none;
+}
+
+/* Dots for slider navigation */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+/* Style for individual dot indicators */
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* When radio buttons are checked, change the dot color */
+.nav-radio:checked:nth-of-type(1) ~ .slider {
+    transform: translateX(0); /* Show first image */
+}
+.nav-radio:checked:nth-of-type(2) ~ .slider {
+    transform: translateX(-33.33%); /* Show second image */
+}
+.nav-radio:checked:nth-of-type(3) ~ .slider {
+    transform: translateX(-66.66%); /* Show third image */
+}
+
+/* Dots active when corresponding radio is checked */
+.nav-radio:checked:nth-of-type(1) ~ .dots .dot:nth-of-type(1),
+.nav-radio:checked:nth-of-type(2) ~ .dots .dot:nth-of-type(2),
+.nav-radio:checked:nth-of-type(3) ~ .dots .dot:nth-of-type(3) {
+    background-color: rgb(56, 54, 54);
+}
+
+/* Automatic Sliding */
+.slider {
+    animation: slide 10s infinite linear; /* Infinite sliding effect */
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33.33% {
+        transform: translateX(-33.33%);
+    }
+    66.66% {
+        transform: translateX(-66.66%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Footer */
+footer {
+    text-align: center;
+    justify-content: center;
+    background-color: #000;
+    color:  #ffffff;
+    font-size: 1.2rem;
+    padding: 10px;
 }
